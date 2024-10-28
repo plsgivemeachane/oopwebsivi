@@ -10,23 +10,22 @@ import InjectableRequest from "../requests/InjectableRequest";
 export default class HttpsProxy extends AbstractProxy {
     readonly config: HttpProxyConfig;
     readonly requestHandler: InjectableRequest;
+    readonly name: string;
 
-    constructor(port: number, hostname: string, path: string = "/") {
+    constructor(port: number, hostname: string, path: string = "/", name: string) {
         super()
         this.config = {
             protocol: "https:", port, hostname, path
         }
 
         this.requestHandler = new InjectableRequest()
+        this.name = name
     }
 
     /**
      * @override getProxySivi for https
      */
     getProxySivi(config: HttpProxyConfig, res: express.Response) {
-        return SiviBuilder.build({
-            sivi_config: config,
-            res
-        }, true)
+        return new SiviBuilder().sivi_config(config).res(res).https().build()
     }
 }

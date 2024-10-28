@@ -1,3 +1,5 @@
+import { logger } from "./winston";
+
 export interface URL_DATA {
     protocol: string
     hostname: string
@@ -20,6 +22,7 @@ export default class URLUtils {
         const hostname = url.replace('http://', '').replace('https://', '').split('/')[0].split(':')[0];
         const port = url.replace('http://', '').replace('https://', '').split('/')[0].split(':')[1];
         const path = url.replace('http://', '').replace('https://', '').replace(url.replace('http://', '').replace('https://', '').split('/')[0], '')
+        logger.verbose(`Extracted URL data: ${JSON.stringify(URLUtils.extractURL(url))} from ${url}`)
         return {
             protocol, hostname, port, path
         }

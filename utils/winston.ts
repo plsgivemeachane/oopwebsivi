@@ -4,6 +4,7 @@ import winston from "winston";
 import path from "path";
 
 export const logger = winston.createLogger({
+    level: "verbose",
   // format của log được kết hợp thông qua format.combine
     format: winston.format.combine(
         winston.format.splat(),
@@ -16,8 +17,8 @@ export const logger = winston.createLogger({
         // thiết lập định dạng của log
         winston.format.printf((log: any) => {
         // nếu log là error hiển thị stack trace còn không hiển thị message của log
-            if (log.stack) return `[${log.timestamp}] [${log.level}] ${log.stack}`;
-            return `[${log.timestamp}] [${log.level}] ${log.message}`;
+            if (log.stack) return `[${log.timestamp}] [${log.level}]: ${log.stack}`;
+            return `<${log.timestamp}> [${log.level}]: ${log.message}`;
         })
     ),
     transports: [

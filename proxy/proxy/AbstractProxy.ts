@@ -1,4 +1,5 @@
 import { logger } from "../../utils/winston";
+import FirewallRule from "../firewall/FirewallRule";
 import { HttpMethod, HttpProxyConfig } from "../proxy/http_proxy";
 import InjectableRequest from "../requests/InjectableRequest";
 import express from 'express'
@@ -14,16 +15,18 @@ import express from 'express'
 export default abstract class AbstractProxy {
     readonly config: HttpProxyConfig | undefined;
     readonly requestHandler: InjectableRequest = new InjectableRequest();
+    readonly name: string = "AbstractProxy";
+
 
     constructor() {}
 
     abstract getProxySivi(config: HttpProxyConfig, res: express.Response): any
     public setup(): void {
-        logger.info("Setting up proxy...");
-        console.dir(this.config, {
-            depth: null,
-            colors: true
-        })
+        logger.info(`[${this.name}] Setting up proxy`);
+        // console.dir(this.config, {
+        //     depth: null,
+        //     colors: true
+        // })
         this.requestHandler.addRouteAsynchronous((req, res) => {
             const extended_config: HttpProxyConfig = {
                 ...this.config,
@@ -39,10 +42,26 @@ export default abstract class AbstractProxy {
             });
 
             proxySivi.on('error', (err: any) => {
-                console.error(`HTTP Proxy error: ${err.message}`);
+                logger.error(`[${this.name}] HTTP Proxy error: ${err.message}`);
                 res.writeHead(500);
                 res.end('Internal Server Error');
             });
+
+            return false // Handle actual request
+        })
+    }
+
+    public setupFirewallRules(firewall: FirewallRule) {
+        // logger.info(`Setting up ${firewall.name} --- ${this.name}`)
+        this.requestHandler.addRouteAsynchronous((req, res) => {
+            const extended_config: HttpProxyConfig = {
+                ...this.config,
+                method: req.method as HttpMethod,
+                headers: req.headers as any,
+                path: req.path
+            }
+
+            return firewall.getHandler(extended_config, req, res)
         })
     }
     

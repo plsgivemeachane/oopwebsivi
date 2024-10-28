@@ -40,6 +40,9 @@ export default class ReverseProxyManager {
      * @param reverse_proxy - The reverse proxy to add.
      */
     public addReverseProxy(reverse_proxy: ReverseProxy) {
+        if(!reverse_proxy.setted_up) {
+            logger.error(`Reverse proxy has not been setted up to the endpoint! --- ${reverse_proxy.name}`)
+        }
         if (this.proxy_map.has(reverse_proxy.getConfig().hostname??"localhost")) {
             throw new Error(`Reverse proxy with hostname ${reverse_proxy.getConfig().hostname} already exists!`);
         }
@@ -48,7 +51,7 @@ export default class ReverseProxyManager {
         this.reverse_proxy.push(reverse_proxy);
         // Add reverse proxy to map
         this.proxy_map.set(reverse_proxy.getConfig().hostname??"localhost", reverse_proxy);
-        logger.info(`Reverse proxy added: ${reverse_proxy.getConfig().hostname}`);
+        logger.info(`[Reverse Proxy Manager] Reverse proxy added: ${reverse_proxy.getConfig().hostname}`);
     }
 
     /**
@@ -70,9 +73,8 @@ export default class ReverseProxyManager {
             }
             
             if (this.proxy_map.has(hostname)) {
-                logger.info(`Forwarding request to ${hostname} via HTTP proxy`)
-
                 const reverse_proxy = this.proxy_map.get(hostname) as ReverseProxy; // Already check null
+                logger.info(`[${reverse_proxy.name}] Forwarding request to ${hostname}`)
                 reverse_proxy.getHttpHandler()(req, res);
             } else {
                 res.writeHead(404);
@@ -104,7 +106,7 @@ export default class ReverseProxyManager {
         // }, https_app);
 
         http_server.listen(80, () => {
-            logger.info(`HTTP reverse proxy listening on port 80...`);
+            logger.info(`[Reverse Server Manager] HTTP reverse proxy listening on port 80...`);
         });
 
         // https_server.listen(443, () => {

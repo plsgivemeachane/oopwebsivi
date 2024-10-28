@@ -2,7 +2,7 @@ import * as express from 'express'
 import { logger } from '../../utils/winston'
 
 export default class InjectableRequest {
-    private routes: ((req: express.Request, res: express.Response) => Promise<void>)[]
+    private routes: ((req: express.Request, res: express.Response) => Promise<boolean>)[]
 
     constructor() {
         this.routes = []
@@ -16,7 +16,7 @@ export default class InjectableRequest {
      *
      * @param route - A function that takes an Express request and response object, and performs asynchronous operations.
      */
-    public addRoute(route: (req: express.Request, res: express.Response) => Promise<void>) {
+    public addRoute(route: (req: express.Request, res: express.Response) => Promise<boolean>) {
         this.routes.push(route)
     }
 
@@ -26,13 +26,26 @@ export default class InjectableRequest {
      *
      * @param route - A function that takes an Express request and response object, and performs synchronous operations.
      */
-    public addRouteAsynchronous(route: (req: express.Request, res: express.Response) => void) {
+    public addRouteAsynchronous(route: (req: express.Request, res: express.Response) => boolean) {
         // TODO: Very stupid code
-        this.routes.push(async (req, res) => {
-            process.nextTick(() => {
-                route(req, res)
-            })
-        })
+        this.routes.push(
+            (req: express.Request, res: express.Response) => new Promise(
+                (resolve, reject) => {
+                    process.nextTick(() => {
+                        try {
+                            const result = route(req, res)
+                            if (result) {
+                                resolve(true)
+                            } else {
+                                resolve(false)
+                            }
+                        } catch (error) {
+                            reject(error)
+                        }
+                    })
+                }
+            )
+        )
     }
 
     /**
@@ -44,10 +57,15 @@ export default class InjectableRequest {
      */
     public getHandler() {
         return async (req: express.Request, res: express.Response) => {
-            logger.info(`------------> ${req.method} ${req.url} --- ${req.ip}`)
+            logger.info(`-> ${req.method} ${req.url} --- ${req.ip}`)
             try {
                 for(let route of this.routes) {
-                    await route(req, res)
+                    // logger.info("Executing route --- " + route.name)
+                    if(!await route(req, res)) {
+                        // Cancel request if route returns false | Not always true
+                        // logger.warn(`Route aborted request`);
+                        return;
+                    }
                 }
             } catch (error: any) {
                 logger.error(`Error processing request: ${error.message}`);

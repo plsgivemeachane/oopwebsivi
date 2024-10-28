@@ -15,7 +15,6 @@ export default class YAMLReader {
   async readConfig() {
     try {
       const doc = await yaml.load(fs.readFileSync(this.config_file, 'utf8'));
-      console.log(doc)
       return doc;
     } catch (error) {
       console.error('Error reading YAML:', error);

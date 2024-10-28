@@ -1,3 +1,5 @@
+import { logger } from "../../utils/winston";
+import FirewallRule from "../firewall/FirewallRule";
 import HttpProxy from "../proxy/http_proxy";
 import HttpsProxy from "../proxy/https_proxy";
 
@@ -20,6 +22,8 @@ export default class ReverseProxy {
     private readonly http_server: HttpProxy;
     private readonly https_server: HttpsProxy;
     private readonly config: ReverseProxyConfig;
+    public readonly name: string;
+    public setted_up: boolean = false;
 
     /**
      * Creates a new ReverseProxy instance.
@@ -29,12 +33,11 @@ export default class ReverseProxy {
      *  - hostname: The hostname of the reverse proxy server. Defaults to 'localhost'.
      *  - path: The path prefix of the reverse proxy server. Defaults to '/'.
      */
-    public constructor(config: ReverseProxyConfig) {
+    public constructor(config: ReverseProxyConfig, name: string = "ReverseProxy") {
         this.config = config
-        this.http_server = new HttpProxy(config.http_port??80, config.hostname??'localhost', config.path??'/')
-        this.https_server = new HttpsProxy(config.https_port??443, config.hostname??'localhost', config.path??'/')
-        this.http_server.setup()
-        this.https_server.setup()
+        this.name = name
+        this.http_server = new HttpProxy(config.http_port??80, config.hostname??'localhost', config.path??'/', `${this.name} HTTP Server`)
+        this.https_server = new HttpsProxy(config.https_port??443, config.hostname??'localhost', config.path??'/', `${this.name} HTTPS Server`)
     }
 
     /**
@@ -59,5 +62,22 @@ export default class ReverseProxy {
      */
     public getConfig() {
         return this.config
+    }
+
+    public setupFirewallRules(firewall: FirewallRule) {
+        logger.info(`[${this.name}] Setting up ${firewall.name}`)
+        this.http_server.setupFirewallRules(firewall)
+        this.https_server.setupFirewallRules(firewall)
+        return this
+    }
+
+    public setup() {
+        if(this.setted_up) {
+            throw new Error(`[${this.name}] Reverse proxy already setted up`)
+        }
+        this.setted_up = true
+        this.http_server.setup()
+        this.https_server.setup()
+        return this
     }
 }

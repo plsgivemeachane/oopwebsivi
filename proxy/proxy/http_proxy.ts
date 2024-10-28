@@ -24,22 +24,20 @@ export interface HttpProxyConfig {
 export default class HttpProxy extends AbstractProxy {
     readonly config: HttpProxyConfig;
     readonly requestHandler: InjectableRequest;
+    readonly name: string;
 
-    constructor(port: number, hostname: string, path: string = "/") {
+    constructor(port: number, hostname: string, path: string = "/", name: string = "HttpProxy") {
         super()
         this.config = {
             protocol:"http:", port, hostname, path
         }
-
         this.requestHandler = new InjectableRequest()
+        this.name = name
     }
 
     
     getProxySivi(config: HttpProxyConfig, res: express.Response) {
-        return SiviBuilder.build({
-            sivi_config: config,
-            res
-        }, false)
+        return new SiviBuilder().sivi_config(config).res(res).build()
     }
 
 }
