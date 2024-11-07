@@ -21,6 +21,7 @@ export default class InjectableRequest {
      */
     public addRoute(route: routeFunction) {
         this.routes.push(route)
+        return this
     }
 
     public addRoutePossibleReturn(route: routeReturnFunction) {
@@ -36,6 +37,7 @@ export default class InjectableRequest {
                 return false;
             }
         });
+        return this
     }
 
     /**

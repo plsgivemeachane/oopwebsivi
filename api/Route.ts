@@ -8,8 +8,9 @@ Middleware (Also the route handler itself) is an InjectableRequest
     - middleware: InjectableRequest
     - method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH"
 */
-import InjectableRequest, { routeReturnFunction } from "../requests/InjectableRequest";
+import InjectableRequest, { routeFunction, routeReturnFunction } from "../requests/InjectableRequest";
 import express from 'express'
+import Middlewares from "./Middleware";
 type Method = "get" | "post" | "put" | "delete" | "patch";
 
 export default class Route {
@@ -17,14 +18,17 @@ export default class Route {
     private method: Method;
     private readonly handler: InjectableRequest;
 
-    constructor(route: string, method: Method) {
+    constructor(route: string, method: Method, auth = true) {
         this.path = route;
         this.handler = new InjectableRequest();
         this.method = method;
+
+        if(auth) Middlewares.auth(this)
+
         return this;
     }
 
-    public route(fn: routeReturnFunction) {
+    public route(fn: routeReturnFunction | routeFunction) {
         this.handler.addRoutePossibleReturn(fn);
         return this;
     }
@@ -36,10 +40,6 @@ export default class Route {
 
     public getRoute() {
         return this.path;
-    }
-
-    public getMiddleware() {
-        return this.handler;
     }
     
     public getHandler() {

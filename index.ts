@@ -11,9 +11,14 @@ import PortFowardingManager from "./proxy/port_fowarding/port_fowarding_manger";
 import DatabaseInput from "./utils/databaseInput";
 import UDPFoward from "./proxy/port_fowarding/UDPFoward";
 import ReverseProxyBuilder from "./proxy/reverse_proxy/reverse_proxy_builder";
-import APIServer from "./api/api_server";
+import RESTApi from "./api/api_server";
 import Route from "./api/Route";
 import DNSServer, { DNS_RECORD } from "./dns/DNSServer";
+import Middlewares from "./api/Middleware";
+import hello from "./api/routes/hello";
+import login from "./api/routes/login";
+import RouteGroup from "./api/RouteGroup";
+import dns from "./api/routes/dns";
 
 async function production_main() {
     logger.info("-----------> Getting Port Forwarding")
@@ -80,13 +85,10 @@ async function development_main() {
 }
 
 async function server_main() {
-    const server = new APIServer()
-    const testRoute = new Route("/test", 'get')
-        .route((req, res) => {
-            return res.send("Hello World")
-        })
-
-    server.addRoute(testRoute)
+    const server = new RESTApi()
+    server.addRoute(hello)
+    server.addRoute(new RouteGroup("/api").route(login))
+    server.addRoute(dns)
     server.start()
 }
 
@@ -116,8 +118,8 @@ async function dns_main() {
 
 async function main() {
     // await development_main()
-    // await server_main()
-    await dns_main()
+    await server_main()
+    // await dns_main()
 }
 
 main();
