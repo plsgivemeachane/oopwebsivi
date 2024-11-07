@@ -1,3 +1,4 @@
+import { logger } from "../../utils/winston";
 import AbstractPortFoward from "./AbstractPortFoward";
 
 export default class PortFowardingManager {
@@ -14,6 +15,7 @@ export default class PortFowardingManager {
     }
 
     public addPortFowarding(portFowarding: AbstractPortFoward) {
+        logger.info(`[Port Fowarding Manager] ${portFowarding.getName()} : ${portFowarding.getIncomingPort()} --> ${portFowarding.getInternalHost()}:${portFowarding.getInternalPort()}`)
         this.portFowardings.push(portFowarding)
     }
 

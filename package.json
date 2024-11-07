@@ -10,14 +10,18 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/dns2": "^2.0.9",
     "@types/express": "^5.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.7.9",
     "typescript": "^5.6.3"
   },
   "dependencies": {
+    "@prisma/client": "^5.17.0",
+    "dns2": "^2.1.0",
     "express": "^4.21.1",
     "js-yaml": "^4.1.0",
+    "prisma": "^5.21.1",
     "winston": "^3.15.0"
   }
 }

@@ -1,7 +1,7 @@
 import { logger } from "../../utils/winston";
 import FirewallRule from "../firewall/FirewallRule";
 import { HttpMethod, HttpProxyConfig } from "../proxy/http_proxy";
-import InjectableRequest from "../requests/InjectableRequest";
+import InjectableRequest from "../../requests/InjectableRequest";
 import express from 'express'
 
 /**
@@ -27,7 +27,7 @@ export default abstract class AbstractProxy {
         //     depth: null,
         //     colors: true
         // })
-        this.requestHandler.addRouteAsynchronous((req, res) => {
+        this.requestHandler.addRoute((req, res) => {
             const extended_config: HttpProxyConfig = {
                 ...this.config,
                 method: req.method as HttpMethod,
@@ -53,7 +53,7 @@ export default abstract class AbstractProxy {
 
     public setupFirewallRules(firewall: FirewallRule) {
         // logger.info(`Setting up ${firewall.name} --- ${this.name}`)
-        this.requestHandler.addRouteAsynchronous((req, res) => {
+        this.requestHandler.addRoute((req, res) => {
             const extended_config: HttpProxyConfig = {
                 ...this.config,
                 method: req.method as HttpMethod,

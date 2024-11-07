@@ -1,5 +1,6 @@
 import ReverseProxy from "../reverse_proxy/reverse_proxy";
 import AlwaysBlockRule from "./rules/AlwaysBlockRule";
+import HelloWorldRules from "./rules/HelloWorldRules";
 import LoggingRules from "./rules/LoggingRules";
 
 export default class FirewallFactory {
@@ -12,6 +13,10 @@ export default class FirewallFactory {
     }
     
     public build(): ReverseProxy  {
+        if(!this.config.plugins) {
+            return this.reverse_proxy
+        }
+
         for(const plugin of this.config.plugins) {
             switch(plugin.module) {
                 case "AlwaysBlock":
@@ -19,6 +24,9 @@ export default class FirewallFactory {
                     break;
                 case "LoggingRules":
                     this.reverse_proxy.setupFirewallRules(new LoggingRules(plugin.message))
+                    break;
+                case "HelloWorldRules":
+                    this.reverse_proxy.setupFirewallRules(new HelloWorldRules())
                     break;
             }
         }

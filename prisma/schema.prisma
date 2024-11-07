@@ -1,0 +1,57 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["omitApi"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Forward_ports {
+  id            String                  @id @unique
+  incoming_port Int                     @unique
+  internal_host String
+  internal_port Int
+  protocol      Portforwading_protocols
+}
+
+model Reserve_hosts {
+  id             String                  @id @unique
+  domain         String                  @unique
+  target_address String
+  protocol       Hostreserving_protocols
+}
+
+model Domain_dns {
+  id      String        @id @unique
+  domain  String        @unique
+  records Dns_records[]
+}
+
+model Dns_records {
+  id        String           @unique
+  domain_id String
+  name      String
+  type      Dns_record_types
+  value     String
+  create_at String
+  domain    Domain_dns       @relation(fields: [domain_id], references: [id], onDelete: Cascade)
+}
+
+enum Portforwading_protocols {
+  tcp
+  udp
+}
+
+enum Hostreserving_protocols {
+  http
+  https
+}
+
+enum Dns_record_types {
+  A
+  CNAME
+  AAAA
+  TXT
+}

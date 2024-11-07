@@ -5,7 +5,7 @@ import SiviBuilder from "./sivi_builder";
 import express from 'express'
 import AbstractProxy from "./AbstractProxy";
 import fs from 'fs'
-import InjectableRequest from "../requests/InjectableRequest";
+import InjectableRequest from "../../requests/InjectableRequest";
 
 export default class HttpsProxy extends AbstractProxy {
     readonly config: HttpProxyConfig;

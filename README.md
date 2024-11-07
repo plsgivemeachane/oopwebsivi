@@ -4,23 +4,23 @@ This project is a copy from scratch of nginx server.
 
 ## Setup Instructions
 
-1. Clone the repository:
-```
+I. Clone the repository:
+```bash
 git clone https://github.com/plsgivemeachane/oopwebsivi.git
 ```
 
-2. Install dependencies:
-```
+II. Install dependencies:
+```bash
 npm install
 ```
 
 ## Usage
 
 Run the server:
-```
+```bash
 ts-node index.ts
 ```
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue.

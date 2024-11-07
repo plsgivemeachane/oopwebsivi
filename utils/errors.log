@@ -5,3 +5,11 @@
 <2024-10-28 22:44:07> [[31merror[39m]: Reverse proxy has not been setted up to the endpoint! --- File_sivi
 <2024-10-28 22:44:12> [[31merror[39m]: Reverse proxy has not been setted up to the endpoint! --- File_sivi
 <2024-10-28 23:18:37> [[31merror[39m]: [TCPFoward] Server socket error: read ECONNRESET
+<2024-11-01 09:39:51> [[31merror[39m]: Reverse proxy has not been setted up to the endpoint! --- ReverseProxy
+<2024-11-01 09:39:51> [[31merror[39m]: Reverse proxy has not been setted up to the endpoint! --- ReverseProxy
+<2024-11-01 09:39:51> [[31merror[39m]: Reverse proxy has not been setted up to the endpoint! --- ReverseProxy
+<2024-11-01 09:39:51> [[31merror[39m]: Reverse proxy has not been setted up to the endpoint! --- ReverseProxy
+<2024-11-01 12:43:11> [[31merror[39m]: [File_sivi HTTP Server] HTTP Proxy error: connect ECONNREFUSED 127.0.0.1:8000
+<2024-11-01 12:44:30> [[31merror[39m]: [File_sivi HTTP Server] HTTP Proxy error: connect ECONNREFUSED 127.0.0.1:8000
+<2024-11-01 12:44:30> [[31merror[39m]: [File_sivi HTTP Server] HTTP Proxy error: connect ECONNREFUSED 127.0.0.1:8000
+<2024-11-01 12:45:25> [[31merror[39m]: [File_sivi HTTP Server] HTTP Proxy error: connect ECONNREFUSED 127.0.0.1:8000

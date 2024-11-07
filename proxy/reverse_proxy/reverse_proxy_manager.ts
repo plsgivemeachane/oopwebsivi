@@ -74,7 +74,7 @@ export default class ReverseProxyManager {
             
             if (this.proxy_map.has(hostname)) {
                 const reverse_proxy = this.proxy_map.get(hostname) as ReverseProxy; // Already check null
-                logger.info(`[${reverse_proxy.name}] Forwarding request to ${hostname}`)
+                // logger.info(`[${reverse_proxy.name}] Forwarding request to ${hostname}`)
                 reverse_proxy.getHttpHandler()(req, res);
             } else {
                 res.writeHead(404);

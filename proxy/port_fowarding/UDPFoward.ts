@@ -2,19 +2,12 @@ import { logger } from "../../utils/winston";
 import dgram from 'dgram'
 import AbstractPortFoward from "./AbstractPortFoward";
 
-export default class UDPFoward implements AbstractPortFoward {
-    private readonly incomingPort: number;
-    private readonly internalPort: number;
-    private readonly internalHost: string;
-    private readonly name: string;
+export default class UDPFoward extends AbstractPortFoward {
 
     private server: dgram.Socket | undefined;
 
     constructor(incomingPort: number, internalPort: number, internalHost: string, name: string = "UDPFoward") {
-        this.incomingPort = incomingPort;
-        this.internalPort = internalPort;
-        this.internalHost = internalHost;
-        this.name = name
+        super(incomingPort, internalPort, internalHost, name)
     }
 
     setup() {

@@ -1,8 +1,11 @@
 import * as express from 'express'
-import { logger } from '../../utils/winston'
+import { logger } from '../utils/winston'
+
+export type routeFunction = (req: express.Request, res: express.Response) => (Promise<boolean> | boolean)
+export type routeReturnFunction = (req: express.Request, res: express.Response) => (Promise<void | any> | void | any)
 
 export default class InjectableRequest {
-    private routes: ((req: express.Request, res: express.Response) => Promise<boolean>)[]
+    private routes: (routeFunction)[]
 
     constructor() {
         this.routes = []
@@ -16,36 +19,23 @@ export default class InjectableRequest {
      *
      * @param route - A function that takes an Express request and response object, and performs asynchronous operations.
      */
-    public addRoute(route: (req: express.Request, res: express.Response) => Promise<boolean>) {
+    public addRoute(route: routeFunction) {
         this.routes.push(route)
     }
 
-    /**
-     * Adds a synchronous route to the list of routes by wrapping it in an asynchronous function.
-     * The route is executed using `process.nextTick` to schedule it for the next event loop iteration.
-     *
-     * @param route - A function that takes an Express request and response object, and performs synchronous operations.
-     */
-    public addRouteAsynchronous(route: (req: express.Request, res: express.Response) => boolean) {
-        // TODO: Very stupid code
-        this.routes.push(
-            (req: express.Request, res: express.Response) => new Promise(
-                (resolve, reject) => {
-                    process.nextTick(() => {
-                        try {
-                            const result = route(req, res)
-                            if (result) {
-                                resolve(true)
-                            } else {
-                                resolve(false)
-                            }
-                        } catch (error) {
-                            reject(error)
-                        }
-                    })
+    public addRoutePossibleReturn(route: routeReturnFunction) {
+        this.routes.push(async (req, res) => {
+            try {
+                const result = await Promise.resolve(route(req, res)); // Wrap into Promise to ensure proper async execution
+                if (typeof result === 'boolean') {
+                    return result;
+                } else {
+                    return true; // if result is not a boolean, assume execution was successful
                 }
-            )
-        )
+            } catch (error) {
+                return false;
+            }
+        });
     }
 
     /**
@@ -57,11 +47,17 @@ export default class InjectableRequest {
      */
     public getHandler() {
         return async (req: express.Request, res: express.Response) => {
-            logger.info(`-> ${req.method} ${req.url} --- ${req.ip}`)
+            // logger.info(`-> ${req.method} ${req.url} --- ${req.ip}`)
             try {
                 for(let route of this.routes) {
                     // logger.info("Executing route --- " + route.name)
-                    if(!await route(req, res)) {
+                    let result = route(req, res) // Can be async and non-async function
+                    
+                    if(result && result instanceof Promise) {
+                        result = await result;
+                    }
+
+                    if(!result) {
                         // Cancel request if route returns false | Not always true
                         // logger.warn(`Route aborted request`);
                         return;
