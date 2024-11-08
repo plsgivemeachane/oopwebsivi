@@ -1,5 +1,4 @@
 import InjectableRequest from "../../requests/InjectableRequest";
-import http from 'http'
 import SiviBuilder from "./sivi_builder";
 import express from 'express'
 import AbstractProxy from "./AbstractProxy";

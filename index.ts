@@ -109,16 +109,6 @@ function server_main() {
  */
 async function dns_main(): Promise<void> {
     const server = new DNSServer(5333)
-    
-    // server.addRecord(record)
-    // server.addRecord({
-    //     domain: "lilboissivi.com",
-    //     type: "A",
-    //     name: "lilboissivi.com",
-    //     value: "127.0.0.1",
-    //     id: 1
-    // })
-
     logger.info("[MASTER] Setting up domains")
     const domains = await DatabaseManager.getDomainDns()
     for (const domain of domains) {

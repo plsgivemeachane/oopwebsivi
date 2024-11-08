@@ -1,4 +1,3 @@
-import InjectableRequest, { routeReturnFunction } from "../requests/InjectableRequest";
 import express from 'express'
 import { logger } from "../utils/winston";
 import Route from "./Route";

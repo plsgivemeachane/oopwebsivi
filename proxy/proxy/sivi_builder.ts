@@ -25,8 +25,6 @@ export default class SiviBuilder {
      * Builds a Sivi (Simple HTTP Proxy) using the given configuration.
      * It takes a SiviConfig object and a boolean indicating whether it is an HTTPS proxy.
      * It returns a Sivi object that can be used to make a request to the proxy.
-     * @param config - The configuration object for the Sivi.
-     * @param isHttps - A boolean indicating whether the Sivi is an HTTPS proxy.
      * @returns A Sivi object that can be used to make a request to the proxy.
      */
     public build() {

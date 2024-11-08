@@ -9,7 +9,6 @@ Middleware (Also the route handler itself) is an InjectableRequest
     - method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH"
 */
 import InjectableRequest, { routeFunction, routeReturnFunction } from "../requests/InjectableRequest";
-import express from 'express'
 import Middlewares from "./Middleware";
 type Method = "get" | "post" | "put" | "delete" | "patch";
 

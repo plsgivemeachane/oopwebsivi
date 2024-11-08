@@ -28,6 +28,7 @@ export default class ReverseProxy {
     /**
      * Creates a new ReverseProxy instance.
      * @param {ReverseProxyConfig} config A configuration object containing the following properties:
+     * @param {string} name The name of the reverse proxy
      *  - http_port: The port number on which the HTTP server will listen. Defaults to 80.
      *  - https_port: The port number on which the HTTPS server will listen. Defaults to 443.
      *  - hostname: The hostname of the reverse proxy server. Defaults to 'localhost'.

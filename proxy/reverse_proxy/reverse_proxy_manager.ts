@@ -1,9 +1,7 @@
 import { logger } from "../../utils/winston";
 import ReverseProxy from "./reverse_proxy";
-import fs from 'fs'
 import express from 'express'
 import http from 'http'
-import https from 'https'
 
 /**
  * The ReverseProxyManager is responsible for managing reverse proxies.

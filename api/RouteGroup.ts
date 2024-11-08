@@ -17,8 +17,7 @@ export default class RouteGroup {
             if(route instanceof Route) {
                 logger.info(`[API Server] [${this.path}] Adding route: ${route.getMethod().toUpperCase()} ${route.getRoute()}`)
                 this.router.use(route.getRoute(), route.getHandler())
-            }
-            else if(route instanceof RouteGroup) {
+            } else {
                 logger.info(`[API Server] [${this.path}] Adding route group: ${route.getPath()}`)
                 this.router.use(route.getPath(), route.getRouter())
             }

@@ -1,6 +1,5 @@
 import { logger } from "../utils/winston";
 import FirewallFactory from "./firewall/FirewallFactory";
-import AbstractPortForward from "./port_fowarding/AbstractPortForward";
 import ReverseProxy from "./reverse_proxy/reverse_proxy";
 import ReverseProxyManager from "./reverse_proxy/reverse_proxy_manager";
 

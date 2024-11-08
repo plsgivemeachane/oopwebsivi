@@ -1,6 +1,6 @@
 import { logger } from "../../utils/winston";
 import FirewallRule from "../firewall/FirewallRule";
-import { HttpMethod, HttpProxyConfig } from "../proxy/http_proxy";
+import { HttpMethod, HttpProxyConfig } from "./http_proxy";
 import InjectableRequest from "../../requests/InjectableRequest";
 import express from 'express'
 

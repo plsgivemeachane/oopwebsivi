@@ -1,4 +1,4 @@
-import { Packet, UDPServer, DnsResponse } from "dns2";
+import { Packet, DnsResponse } from "dns2";
 import dns from "dns";
 import { DNS_QUESTION, DNS_RECORD } from "./DNSServer";
 import { logger } from "../utils/winston";
