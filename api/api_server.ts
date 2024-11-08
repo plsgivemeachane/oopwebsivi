@@ -3,12 +3,15 @@ import express from 'express'
 import http from 'http'
 import { logger } from "../utils/winston";
 import RouteGroup from "./RouteGroup";
+import Observable from "../utils/Observable";
 
 
 
 export default class APIServer {
-    private routes: (Route | RouteGroup)[];
+    private readonly routes: (Route | RouteGroup)[];
     public port: number;
+
+    private static readonly observable: Observable<string> = new Observable<string>();
 
     constructor() {
         this.routes = [];
@@ -44,5 +47,9 @@ export default class APIServer {
             logger.info(`[API Server] API Server listening on port 8080...`);
         });
 
+    }
+
+    public static getObservable(): Observable<string> {
+        return this.observable;
     }
 }

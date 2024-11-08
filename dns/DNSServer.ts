@@ -76,7 +76,7 @@ export default class DNSServer {
     public start() {
         
         this.server.on("listening", () => {
-            logger.info(`DNS server listening on port ${this.port}`);
+            logger.info(`[DNS Server] DNS server listening on port ${this.port}`);
         });
 
         this.server.bind(this.port);

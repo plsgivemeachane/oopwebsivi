@@ -2,6 +2,8 @@
 import winston from "winston";
 // const path = require('path');
 import path from "path";
+import { LogStreaming } from "./LogStreaming";
+import APIServer from "../api/api_server";
 
 const options = {
     console: {
@@ -40,5 +42,9 @@ export const logger = winston.createLogger({
     transports: [
         new winston.transports.Console(options.console),
         new winston.transports.File(options.file),
+        new LogStreaming({
+            ...options.file,
+            observable: APIServer.getObservable()
+        })
     ],
 });

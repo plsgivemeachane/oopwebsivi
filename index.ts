@@ -14,6 +14,7 @@ import login from "./api/routes/login";
 import RouteGroup from "./api/RouteGroup";
 import dns from "./api/routes/dns";
 import port_fowarding from "./api/routes/port_fowarding";
+import logs from "./api/routes/logs";
 
 
 
@@ -94,6 +95,7 @@ function server_main() {
     const server = new RESTApi()
     server.addRoute(hello)
     server.addRoute(new RouteGroup("/api").route(login, dns, port_fowarding))
+    server.addRoute(logs)
     server.start()
 }
 
@@ -128,6 +130,6 @@ async function main(): Promise<void> {
     await dns_main()
 }
 
-main().then(r => {
+main().then(_ => {
     logger.info("[MASTER] Server run successfully")
 });

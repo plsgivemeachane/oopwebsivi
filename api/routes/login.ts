@@ -1,7 +1,9 @@
 import Route from "../Route"
 import { JWT } from 'quanvnjwt'
+import dotenv from 'dotenv'
+dotenv.config()
 
-const jwtClient = new JWT("SECRET")
+const jwtClient = new JWT(process.env.JWT_SECRET??"")
 
 export default new Route("/login", 'post', false)
     .route((req, res) => {
