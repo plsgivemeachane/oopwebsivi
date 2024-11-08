@@ -1,8 +1,8 @@
 import { logger } from "../../utils/winston";
 import dgram from 'dgram'
-import AbstractPortFoward from "./AbstractPortFoward";
+import AbstractPortForward from "./AbstractPortForward";
 
-export default class UDPFoward extends AbstractPortFoward {
+export default class UDPForward extends AbstractPortForward {
 
     private server: dgram.Socket | undefined;
 
@@ -52,13 +52,16 @@ export default class UDPFoward extends AbstractPortFoward {
         });
     }
 
-    stop() {
-        if(!this.server) {
-            throw new Error(`[${this.name}] UDP Server not setup yet`)
-        }
+    async stop() {
+        return new Promise<void>((resolve, reject) => {
+            if (!this.server) {
+                throw new Error(`[${this.name}] UDP Server not setup yet`)
+            }
 
-        this.server.close(() => {
-            logger.info(`[${this.name}] UDP port forwarding stopped.`);
-        });
+            this.server.close(() => {
+                logger.info(`[${this.name}] UDP port forwarding stopped.`);
+                resolve();
+            });
+        })
     }
 }

@@ -1,3 +1,5 @@
+import express from "express";
+
 export const msgMap : {
     [key: number]: string
 } = {
@@ -35,11 +37,11 @@ export default class ReturnBuilder {
         return this;
     }
 
-    public build() {
-        return {
+    public send(res: express.Response) {
+        return res.json({
             status: this.status_,
             msg: this.msg_,
             data: this.data_
-        }
+        })
     }
 }

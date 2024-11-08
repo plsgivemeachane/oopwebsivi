@@ -1,3 +1,5 @@
 node_modules/
 config.yaml
 .env
+/utils/ìnfo.log
+*.http

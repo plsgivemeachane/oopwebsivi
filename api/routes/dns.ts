@@ -1,4 +1,4 @@
-import DatabaseInput from "../../utils/databaseInput";
+import DatabaseManager from "../../utils/databaseManager";
 import ReturnBuilder from "../ReturnBuilder";
 import Route from "../Route";
 import RouteGroup from "../RouteGroup";
@@ -7,194 +7,192 @@ export default new RouteGroup("/dns")
     .route(
         new Route("/domains", "get")
             // Get all domains
-            .route(async (req, res) => {
-                
-                const dns_domains = await DatabaseInput.getDomainDns(true)
+            .route(async (_, res) => {
 
-                return res.json(new ReturnBuilder()
+                const dns_domains = await DatabaseManager.getDomainDns(true);
+
+                return new ReturnBuilder()
                     .data(dns_domains)
-                    .build()
-                )
+                    .send(res);
             }),
         new Route("/domains/:domain_id", "get")
             // Get specific domain
             .route(async (req, res) => {
-                const dns_domain = await DatabaseInput.findDomainWithId(req.params.domain_id)
-                return res.json(new ReturnBuilder()
+                const dns_domain = await DatabaseManager.findDomainWithId(req.params.domain_id);
+                return new ReturnBuilder()
                     .data(dns_domain)
-                    .build()
-                )
+                    .send(res);
             }),
         new Route("domains", "post")
             // Create domain
             .route(async (req, res) => {
                 const domain = req.body.domain;
-                
-                if (!domain) 
-                    return res.json(new ReturnBuilder()
+
+                if (!domain)
+                    return new ReturnBuilder()
                         .status(400)
-                        .msg('Missing domain')
-                        .build()
-                    )
-                
-                const existingDomain = await DatabaseInput.findDomainWithDomain(domain)
+                        .msg("Missing domain")
+                        .send(res);
+
+                const existingDomain = await DatabaseManager.findDomainWithDomain(domain);
 
                 if (existingDomain)
-                    return res.json(new ReturnBuilder()
+                    return new ReturnBuilder()
                         .status(400)
-                        .msg('Domain already exists')
-                        .build()
-                    )
+                        .msg("Domain already exists")
+                        .send(res);
 
-                await DatabaseInput.createDomain(domain)
-                return res.json(new ReturnBuilder()
+                await DatabaseManager.createDomain(domain);
+                return new ReturnBuilder()
                     .status(200)
-                    .msg('Domain created')
-                    .build()
-                )
+                    .msg("Domain created")
+                    .send(res);
             }),
         new Route("/domains/:domain_id", "delete")
             // Delete a domain
             .route(async (req, res) => {
-                const dns_domain = await DatabaseInput.findDomainWithId(req.params.domain_id)
+                const dns_domain = await DatabaseManager.findDomainWithId(req.params.domain_id);
                 if (!dns_domain)
-                    return res.json(new ReturnBuilder()
+                    return new ReturnBuilder()
                         .status(404)
-                        .msg('Domain not found')
-                        .build()
-                    )
+                        .msg("Domain not found")
+                        .send(res);
 
-                await DatabaseInput.deleteDomain({
+                await DatabaseManager.deleteDomain({
                     where: {
                         id: req.params.domain_id
                     }
-                })
+                });
 
-                return res.json(new ReturnBuilder()
+                return new ReturnBuilder()
                     .status(200)
-                    .msg('Domain deleted')
-                    .build()
-                )
+                    .msg("Domain deleted")
+                    .send(res);
             }),
         new Route("/domains/:domain_id/records", "get")
             // Get all records of a domain
             .route(async (req, res) => {
-                const dns_domain = await DatabaseInput.findDomainWithId(req.params.domain_id)
+                const dns_domain = await DatabaseManager.findDomainWithId(req.params.domain_id);
                 if (!dns_domain)
-                    return res.json(new ReturnBuilder()
+                    return new ReturnBuilder()
                         .status(404)
-                        .msg('Domain not found')
-                        .build()
-                    )
+                        .msg("Domain not found")
+                        .send(res);
 
-                const dns_records = await DatabaseInput.getDomainDnsRecord(dns_domain.id)
+                const dns_records = await DatabaseManager.getDomainDnsRecord(dns_domain.id);
 
-                return res.json(new ReturnBuilder()
+                return new ReturnBuilder()
                     .data(dns_records)
-                    .build()
-                )
+                    .send(res);
             }),
         new Route("/domains/:domain_id/records", "post")
             // Create a record
             .route(async (req, res) => {
-                const dns_domain = await DatabaseInput.findDomainWithId(req.params.domain_id)
+                const dns_domain = await DatabaseManager.findDomainWithId(req.params.domain_id);
                 if (!dns_domain)
-                    return res.json(new ReturnBuilder()
+                    return new ReturnBuilder()
                         .status(404)
-                        .msg('Domain not found')
-                        .build()
-                    )
+                        .msg("Domain not found")
+                        .send(res);
 
-                const record = req.body.record;
+                const record: {
+                    domainId: string
+                    name: string
+                    type: string
+                    value: string
+                    domain: string
+                } = req.body;
 
-                if (!record) 
-                    return res.json(new ReturnBuilder()
+                if (!record)
+                    return new ReturnBuilder()
                         .status(400)
-                        .msg('Missing record')
-                        .build()
-                    )
-                
-                if (!record.domainId) return res.json(new ReturnBuilder()
-                    .status(400)
-                    .msg('Missing body: domain_id')
-                    .build()
-                )
-                
-                if (!record.name) return res.json(new ReturnBuilder()
-                    .status(400)
-                    .msg('Missing body: name')
-                    .build()
-                )
-                
-                if (!record.type) return res.json(new ReturnBuilder()
-                    .status(400)
-                    .msg('Missing body: type')
-                    .build()
-                )
-                
-                if (!['A', 'CNAME', 'AAAA', 'TXT'].includes(record.type)) return res.json(new ReturnBuilder()
-                    .status(400)
-                    .msg('Unsupported body: type')
-                    .build()
-                )
+                        .msg("Missing record")
+                        .send(res);
 
-                if (!record.value) return res.json(new ReturnBuilder()
-                    .status(400)
-                    .msg('Missing body: value')
-                    .build()
-                )
+                if (!record.domainId)
+                    return new ReturnBuilder()
+                        .status(400)
+                        .msg("Missing body: domain_id")
+                        .send(res);
 
-                const existingDomain = await DatabaseInput.findDomainWithDomain(record.domain)
-                if (!existingDomain) return res.json(new ReturnBuilder()
-                    .status(400)
-                    .msg('Domain not found')
-                    .build()
-                )
-                
+                if (!record.name)
+                    return new ReturnBuilder()
+                        .status(400)
+                        .msg("Missing body: name")
+                        .send(res);
+
+                if (!record.type)
+                    return new ReturnBuilder()
+                        .status(400)
+                        .msg("Missing body: type")
+                        .send(res);
+
+                if (!["A", "CNAME", "AAAA", "TXT"].includes(record.type))
+                    return new ReturnBuilder()
+                        .status(400)
+                        .msg("Unsupported body: type")
+                        .send(res);
+
+                if (!record.value)
+                    return new ReturnBuilder()
+                        .status(400)
+                        .msg("Missing body: value")
+                        .send(res);
+
+                const existingDomain = await DatabaseManager.findDomainWithDomain(record.domain);
+                if (!existingDomain)
+                    return new ReturnBuilder()
+                        .status(400)
+                        .msg("Domain not found")
+                        .send(res);
+
+
                 // root
-                if (record.name == '@') record.name = existingDomain.domain
+                if (record.name == "@")
+                    record.name = existingDomain.domain;
 
-                const domain = (record.name == existingDomain.domain) ? existingDomain.domain : `${record.name}.${existingDomain.domain}` 
+                const domain = (record.name == existingDomain.domain) ? existingDomain.domain : `${record.name}.${existingDomain.domain}`;
 
-                const existingRecord = await DatabaseInput.getDomainDnsRecordByName(existingDomain.id, domain, record.type)
-                if (existingRecord) return res.json(new ReturnBuilder()
-                    .status(400)
-                    .msg('Record already exists')
-                    .build()
-                )
+                const existingRecord = await DatabaseManager.getDomainDnsRecordByName(existingDomain.id, domain, record.type);
+                if (existingRecord)
+                    return new ReturnBuilder()
+                        .status(400)
+                        .msg("Record already exists")
+                        .send(res);
 
-                await DatabaseInput.createDomainDnsRecord(existingDomain, record)
-                return res.json(new ReturnBuilder()
+
+                await DatabaseManager.createDomainDnsRecord(existingDomain, record);
+                return new ReturnBuilder()
                     .status(200)
-                    .msg('Record created')
-                    .build()
-                )
+                    .msg("Record created")
+                    .send(res);
+
             }),
         new Route("/domains/:domain_id/records/:record_id", "delete")
             // Delete a record
             .route(async (req, res) => {
-                const dns_domain = await DatabaseInput.findDomainWithId(req.params.domain_id)
+                const dns_domain = await DatabaseManager.findDomainWithId(req.params.domain_id);
                 if (!dns_domain)
-                    return res.json(new ReturnBuilder()
+                    return new ReturnBuilder()
                         .status(404)
-                        .msg('Domain not found')
-                        .build()
-                    )
+                        .msg("Domain not found")
+                        .send(res);
 
-                const dns_record = await DatabaseInput.getDomainDnsRecordById(dns_domain.id, req.params.record_id)
+
+                const dns_record = await DatabaseManager.getDomainDnsRecordById(dns_domain.id, req.params.record_id);
                 if (!dns_record)
-                    return res.json(new ReturnBuilder()
+                    return new ReturnBuilder()
                         .status(404)
-                        .msg('Record not found')
-                        .build()
-                    )
+                        .msg("Record not found")
+                        .send(res);
 
-                await DatabaseInput.deleteDomainDnsRecord(dns_record.id)
 
-                return res.json(new ReturnBuilder()
+                await DatabaseManager.deleteDomainDnsRecord(dns_record.id);
+
+                return new ReturnBuilder()
                     .status(200)
-                    .msg('Record deleted')
-                    .build()
-                )
+                    .msg("Record deleted")
+                    .send(res);
+
             })
-    )
+    );

@@ -1,8 +1,8 @@
 import net from 'net'
 import { logger } from '../../utils/winston';
-import AbstractPortFoward from './AbstractPortFoward';
+import AbstractPortForward from './AbstractPortForward';
 
-export default class TCPFoward extends AbstractPortFoward {
+export default class TCPForward extends AbstractPortForward {
     private server: net.Server | undefined;
 
     constructor(incomingPort: number, internalPort: number, internalHost: string, name: string = "TCPFoward") {
@@ -39,7 +39,7 @@ export default class TCPFoward extends AbstractPortFoward {
         return this
     }
 
-    start() {
+    public start() {
         if(!this.server) {
             throw new Error(`[${this.name}] TCP Server not setup yet`)
         }
@@ -49,13 +49,20 @@ export default class TCPFoward extends AbstractPortFoward {
         });
     }
 
-    stop() {
-        if(!this.server) {
-            throw new Error(`[${this.name}] TCP Server not setup yet`)
-        }
+    public async stop() {
+        return new Promise<void>((resolve, reject) => {
+            if (!this.server) {
+                throw new Error(`[${this.name}] TCP Server not setup yet`);
+            }
 
-        this.server.close(() => {
-            logger.info(`[${this.name}] TCP port forwarding stopped.`);
+            this.server.close((err) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    logger.info(`[${this.name}] TCP port forwarding stopped.`);
+                    resolve();
+                }
+            });
         });
     }
 }

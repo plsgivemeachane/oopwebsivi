@@ -1,0 +1,101 @@
+<2024-11-08 20:39:50> [info]: [API Server] [/dns] Adding route: GET /domains
+<2024-11-08 20:39:50> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id
+<2024-11-08 20:39:50> [info]: [API Server] [/dns] Adding route: POST domains
+<2024-11-08 20:39:50> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id
+<2024-11-08 20:39:50> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id/records
+<2024-11-08 20:39:50> [info]: [API Server] [/dns] Adding route: POST /domains/:domain_id/records
+<2024-11-08 20:39:50> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id/records/:record_id
+<2024-11-08 20:39:50> [info]: [API Server] [/api] Adding route: POST /login
+<2024-11-08 20:39:50> [info]: [API Server] [/] Adding route: GET /test
+<2024-11-08 20:39:50> [info]: [API Server] [/] Adding route group: /api
+<2024-11-08 20:39:50> [info]: [API Server] [/] Adding route group: /dns
+<2024-11-08 20:39:50> [info]: [MASTER] Setting up domains
+<2024-11-08 20:39:50> [info]: [API Server] API Server listening on port 8080...
+<2024-11-08 20:40:01> [info]: [API Server] [/dns] Adding route: GET /domains
+<2024-11-08 20:40:01> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id
+<2024-11-08 20:40:01> [info]: [API Server] [/dns] Adding route: POST domains
+<2024-11-08 20:40:01> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id
+<2024-11-08 20:40:01> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id/records
+<2024-11-08 20:40:01> [info]: [API Server] [/dns] Adding route: POST /domains/:domain_id/records
+<2024-11-08 20:40:01> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id/records/:record_id
+<2024-11-08 20:40:01> [info]: [API Server] [/api] Adding route: POST /login
+<2024-11-08 20:40:01> [info]: [API Server] [/] Adding route: GET /test
+<2024-11-08 20:40:01> [info]: [API Server] [/] Adding route group: /api
+<2024-11-08 20:40:01> [info]: [API Server] [/] Adding route group: /dns
+<2024-11-08 20:40:01> [info]: [MASTER] Setting up domains
+<2024-11-08 20:40:01> [info]: [API Server] API Server listening on port 8080...
+<2024-11-08 20:40:02> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-08 20:40:02> [info]: [MASTER] Server run successfully
+<2024-11-08 20:40:02> [info]: DNS server listening on port 5333
+<2024-11-08 20:40:04> [info]: Received DNS request: {"header":{"id":22625,"qr":0,"opcode":0,"aa":0,"tc":0,"rd":1,"ra":0,"z":2,"rcode":0,"qdcount":1,"nscount":0,"arcount":1,"ancount":0},"questions":[{"name":"sunsmm.vn","type":1,"class":1}],"answers":[],"authorities":[],"additionals":[{"name":"","ttl":0,"type":41,"class":512,"rdata":[]}]}
+<2024-11-08 20:40:04> [info]: [DNS] Processing record: type:A record:A
+<2024-11-08 20:41:15> [info]: [API Server] [/dns] Adding route: GET /domains
+<2024-11-08 20:41:15> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id
+<2024-11-08 20:41:15> [info]: [API Server] [/dns] Adding route: POST domains
+<2024-11-08 20:41:15> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id
+<2024-11-08 20:41:15> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id/records
+<2024-11-08 20:41:15> [info]: [API Server] [/dns] Adding route: POST /domains/:domain_id/records
+<2024-11-08 20:41:15> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id/records/:record_id
+<2024-11-08 20:41:15> [info]: [API Server] [/api] Adding route: POST /login
+<2024-11-08 20:41:15> [info]: [API Server] [/] Adding route: GET /test
+<2024-11-08 20:41:15> [info]: [API Server] [/] Adding route group: /api
+<2024-11-08 20:41:15> [info]: [API Server] [/] Adding route group: /dns
+<2024-11-08 20:41:15> [info]: [MASTER] Setting up domains
+<2024-11-08 20:41:15> [info]: [API Server] API Server listening on port 8080...
+<2024-11-08 20:41:16> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-08 20:41:16> [info]: [MASTER] Server run successfully
+<2024-11-08 20:41:16> [info]: DNS server listening on port 5333
+<2024-11-08 20:41:41> [info]: Received DNS request: {"header":{"id":15545,"qr":0,"opcode":0,"aa":0,"tc":0,"rd":1,"ra":0,"z":2,"rcode":0,"qdcount":1,"nscount":0,"arcount":1,"ancount":0},"questions":[{"name":"sunsmm.vn","type":1,"class":1}],"answers":[],"authorities":[],"additionals":[{"name":"","ttl":0,"type":41,"class":512,"rdata":[]}]}
+<2024-11-08 20:41:41> [info]: [DNS] Processing record: type:A record:A
+<2024-11-08 21:40:53> [info]: [API Server] [/dns] Adding route: GET /domains
+<2024-11-08 21:40:53> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id
+<2024-11-08 21:40:53> [info]: [API Server] [/dns] Adding route: POST domains
+<2024-11-08 21:40:53> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id
+<2024-11-08 21:40:53> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id/records
+<2024-11-08 21:40:53> [info]: [API Server] [/dns] Adding route: POST /domains/:domain_id/records
+<2024-11-08 21:40:53> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id/records/:record_id
+<2024-11-08 21:40:53> [info]: [API Server] [/api] Adding route: POST /login
+<2024-11-08 21:40:53> [info]: [API Server] [/] Adding route: GET /test
+<2024-11-08 21:40:53> [info]: [API Server] [/] Adding route group: /api
+<2024-11-08 21:40:53> [info]: [API Server] [/] Adding route group: /dns
+<2024-11-08 21:40:53> [info]: [MASTER] Setting up domains
+<2024-11-08 21:40:53> [info]: [API Server] API Server listening on port 8080...
+<2024-11-08 21:41:56> [info]: [API Server] [/dns] Adding route: GET /domains
+<2024-11-08 21:41:56> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id
+<2024-11-08 21:41:56> [info]: [API Server] [/dns] Adding route: POST domains
+<2024-11-08 21:41:56> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id
+<2024-11-08 21:41:56> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id/records
+<2024-11-08 21:41:56> [info]: [API Server] [/dns] Adding route: POST /domains/:domain_id/records
+<2024-11-08 21:41:56> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id/records/:record_id
+<2024-11-08 21:41:56> [info]: [API Server] [/api] Adding route: POST /login
+<2024-11-08 21:41:56> [info]: [API Server] [/] Adding route: GET /test
+<2024-11-08 21:41:56> [info]: [API Server] [/] Adding route group: /api
+<2024-11-08 21:41:56> [info]: [API Server] [/] Adding route group: /dns
+<2024-11-08 21:41:56> [info]: [MASTER] Setting up domains
+<2024-11-08 21:41:56> [info]: [API Server] API Server listening on port 8080...
+<2024-11-08 21:41:57> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-08 21:41:57> [info]: [MASTER] Server run successfully
+<2024-11-08 21:41:57> [info]: DNS server listening on port 5333
+<2024-11-08 21:42:43> [info]: [API Server] [/dns] Adding route: GET /domains
+<2024-11-08 21:42:43> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id
+<2024-11-08 21:42:43> [info]: [API Server] [/dns] Adding route: POST domains
+<2024-11-08 21:42:43> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id
+<2024-11-08 21:42:43> [info]: [API Server] [/dns] Adding route: GET /domains/:domain_id/records
+<2024-11-08 21:42:43> [info]: [API Server] [/dns] Adding route: POST /domains/:domain_id/records
+<2024-11-08 21:42:43> [info]: [API Server] [/dns] Adding route: DELETE /domains/:domain_id/records/:record_id
+<2024-11-08 21:42:43> [info]: [API Server] [/portforwarding] Adding route: GET /ports
+<2024-11-08 21:42:43> [info]: [API Server] [/portforwarding] Adding route: POST /ports
+<2024-11-08 21:42:43> [info]: [API Server] [/portforwarding] Adding route: DELETE /ports/:port_id
+<2024-11-08 21:42:43> [info]: [API Server] [/portforwarding] Adding route: GET /ports/:port_id
+<2024-11-08 21:42:43> [info]: [API Server] [/api] Adding route: POST /login
+<2024-11-08 21:42:43> [info]: [API Server] [/api] Adding route group: /dns
+<2024-11-08 21:42:43> [info]: [API Server] [/api] Adding route group: /portforwarding
+<2024-11-08 21:42:43> [info]: [API Server] [/] Adding route: GET /test
+<2024-11-08 21:42:43> [info]: [API Server] [/] Adding route group: /api
+<2024-11-08 21:42:43> [info]: [MASTER] Setting up domains
+<2024-11-08 21:42:43> [info]: [API Server] API Server listening on port 8080...
+<2024-11-08 21:42:44> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-08 21:42:44> [info]: [MASTER] Server run successfully
+<2024-11-08 21:42:44> [info]: DNS server listening on port 5333
+<2024-11-08 21:42:52> [info]: authencating...
+<2024-11-08 21:42:52> [info]: Authenticated

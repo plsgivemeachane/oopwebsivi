@@ -1,6 +1,6 @@
-export default abstract class AbstractPortFoward {
+export default abstract class AbstractPortForward {
 
-    protected readonly name: string = "AbstractPortFoward";
+    protected readonly name: string = "AbstractPortForward";
     protected readonly incomingPort: number;
     protected readonly internalPort: number;
     protected readonly internalHost: string;
@@ -30,5 +30,5 @@ export default abstract class AbstractPortFoward {
 
     abstract setup(): any
     abstract start(): void
-    abstract stop(): void
+    abstract stop(): Promise<void>
 }

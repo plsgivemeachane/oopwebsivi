@@ -1,0 +1,4 @@
+### GET request to example server
+GET http://localhost:8080/api/portforwarding/ports
+Authorization: Bearer eyJhbGciOiJRVUFOVk5IQVNIIiwidHlwIjoiSldUIn0.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTczMTA3Njg1OSwiZXhwIjoxNzMxMDgwNDU5fQ.NDIwOWY1NzU2MWQwZDExOTAyZDI4NmNmNTVjNTRkMjQxYjI2ODcxOGY3ZTY2NTM0MmFiMzY2NjAwZmE3MDc5NA
+###

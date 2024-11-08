@@ -11,12 +11,10 @@ import https from 'https'
  * It also provides methods to get the HTTP and HTTPS handlers of the reverse proxies.
  */
 export default class ReverseProxyManager {
-    private reverse_proxy: ReverseProxy[];
     private proxy_map: Map<string, ReverseProxy>;
     private static instance: ReverseProxyManager;
 
     private constructor() {
-        this.reverse_proxy = [];
         this.proxy_map = new Map<string, ReverseProxy>();
     }
 
@@ -47,8 +45,6 @@ export default class ReverseProxyManager {
             throw new Error(`Reverse proxy with hostname ${reverse_proxy.getConfig().hostname} already exists!`);
         }
 
-        // Add reverse proxy to list
-        this.reverse_proxy.push(reverse_proxy);
         // Add reverse proxy to map
         this.proxy_map.set(reverse_proxy.getConfig().hostname??"localhost", reverse_proxy);
         logger.info(`[Reverse Proxy Manager] Reverse proxy added: ${reverse_proxy.getConfig().hostname}`);
