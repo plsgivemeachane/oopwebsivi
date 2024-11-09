@@ -12,7 +12,7 @@ export default new Route("/login", 'post', false)
             return res.status(400).send("Missing username or password")
         }
 
-        if (username !== "admin" || password !== "admin") { // TODO: Remove this    
+        if (username !== process.env.ADMIN_USERNAME || password !== process.env.ADMIN_PASSWORD) { // TODO: Remove this
             return res.status(401).send("Invalid username or password")
         }
 

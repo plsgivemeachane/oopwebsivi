@@ -4,3 +4,4 @@ config.yaml
 /utils/ìnfo.log
 *.http
 *.log
+dist/
