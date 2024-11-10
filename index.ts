@@ -16,6 +16,7 @@ import dns from "./api/routes/v1/dns";
 import port_fowarding from "./api/routes/v1/port_fowarding";
 import logs from "./api/routes/v1/logs";
 import Route from "./api/Route";
+import reverse_proxy from "./api/routes/v1/reverse_proxy";
 
 
 
@@ -86,7 +87,7 @@ function server_main() {
     server.addRoute(
         new RouteGroup("/api")
             .route(new RouteGroup("/v1")
-                .route(dns, port_fowarding)
+                .route(dns, port_fowarding, reverse_proxy)
             )
             .route(login)
     )

@@ -25,7 +25,6 @@ export default class APIServer {
     }
 
     public start() {
-        // TODO: Need refactor with another class
         if(this.routes.length == 0) {
             throw new Error("No routes to start")
         }

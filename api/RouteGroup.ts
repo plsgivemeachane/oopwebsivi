@@ -1,6 +1,7 @@
 import { logger } from "../utils/winston";
 import Route from "./Route";
 import express from "express";
+import { RequestType } from "./RequestType";
 
 export default class RouteGroup {
     private readonly router: express.Router;
@@ -16,7 +17,7 @@ export default class RouteGroup {
         for(let route of routes) {
             if(route instanceof Route) {
                 logger.info(`[API Server] [${this.path}] Adding route: ${route.getMethod().toUpperCase()} ${route.getRoute()}`)
-                this.router.use(route.getRoute(), route.getHandler())
+                this.router[route.getMethod()](route.getRoute(), route.getHandler())
             } else {
                 logger.info(`[API Server] [${this.path}] Adding route group: ${route.getPath()}`)
                 this.router.use(route.getPath(), route.getRouter())

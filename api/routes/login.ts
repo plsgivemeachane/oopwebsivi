@@ -14,7 +14,7 @@ export default new Route("/login", RequestType.POST, false)
             return res.status(400).send("Missing username or password")
         }
 
-        if (username !== process.env.ADMIN_USERNAME || password !== process.env.ADMIN_PASSWORD) { // TODO: Remove this
+        if (username !== process.env.ADMIN_USERNAME || password !== process.env.ADMIN_PASSWORD) {
             return res.status(401).send("Invalid username or password")
         }
 

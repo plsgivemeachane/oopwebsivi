@@ -44,7 +44,7 @@ export default class Route {
         return this.handler.getHandler();
     }
 
-    public getMethod() {
+    public getMethod(): RequestType {
         return this.method;
     }
 }
