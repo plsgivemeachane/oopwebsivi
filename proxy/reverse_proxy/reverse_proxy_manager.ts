@@ -3,6 +3,7 @@ import ReverseProxy from "./reverse_proxy";
 import express from 'express'
 import http from 'http'
 import ReverseProxyBuilder from "./reverse_proxy_builder";
+import DatabaseManager from "../../utils/databaseManager";
 
 /**
  * The ReverseProxyManager is responsible for managing reverse proxies.
@@ -34,6 +35,15 @@ export default class ReverseProxyManager {
         return this.instance;
     }
 
+    public async fetchReverseProxy() {
+        logger.verbose("[Reverse Proxy Manager] -----------> Getting Reserve Hosts")
+        const reverse_host = await DatabaseManager.getReserveHosts()
+        logger.verbose(`[Reverse Proxy Manager] setting up ${reverse_host.length}`)
+        reverse_host.forEach(reverse_host => {
+            this.addReverseProxyFromData(reverse_host)
+        })
+    }
+
     /**
      * Adds a reverse proxy to the manager.
      * 
@@ -55,12 +65,18 @@ export default class ReverseProxyManager {
     }
 
     public stop() {
-        this.http_server.close(() => {
-            logger.info(`[Reverse Server Manager] HTTP reverse proxy closed`);
-        });
-        // this.https_server.close(() => {
-        //     logger.info(`[Reverse Server Manager] HTTPS reverse proxy closed`);
-        // });
+        return new Promise<void>((resolve, reject) => {
+            // clear out the data
+            this.proxy_map.clear()
+
+            this.http_server.close(() => {
+                logger.info(`[Reverse Server Manager] HTTP reverse proxy closed`);
+                resolve()
+            });
+            // this.https_server.close(() => {
+            //     logger.info(`[Reverse Server Manager] HTTPS reverse proxy closed`);
+            // });
+        })
     }
 
     /**
@@ -69,7 +85,11 @@ export default class ReverseProxyManager {
      * The HTTP server listens on port 80 and forwards requests to the corresponding reverse proxy based on the hostname in the request.
      * The HTTPS server listens on port 443 and forwards requests to the corresponding reverse proxy based on the hostname in the request.
      */
-    public start() {
+    public async start() {
+        // Fetch
+        await ReverseProxyManager.getInstance().fetchReverseProxy()
+
+
         this.http_app = express();
         this.https_app = express();
 

@@ -4,7 +4,8 @@ import http from 'http'
 import { logger } from "../utils/winston";
 import RouteGroup from "./RouteGroup";
 import Observable from "../utils/Observable";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 
 export default class APIServer {
@@ -15,7 +16,7 @@ export default class APIServer {
 
     constructor() {
         this.routes = [];
-        this.port = 8080;
+        this.port = process.env.API_SERVER_PORT ? parseInt(process.env.API_SERVER_PORT) : 8080;
     }
 
     public addRoute(route: Route | RouteGroup) {

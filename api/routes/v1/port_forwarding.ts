@@ -73,10 +73,11 @@ export default new RouteGroup("/portforwarding")
                 .status(400)
                 .msg("Port forwarding does not exist")
                 .send(res)
+
             // Remove the port forwarding
             await DatabaseManager.removePortForwarding(port_id)
 
-            PortForwardingManager.getInstance().restart()
+            PortForwardingManager.getInstance().removePortForwarding(port_id)
 
             return new ReturnBuilder()
                 .status(200)

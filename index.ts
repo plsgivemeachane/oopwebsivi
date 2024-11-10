@@ -1,21 +1,14 @@
 import ReverseProxyManager from "./proxy/reverse_proxy/reverse_proxy_manager";
-import YAMLReader from "./utils/YAMLReader";
 import { logger } from "./utils/winston";
-import ProxyFactory from "./proxy/ProxyFactory";
-import TCPForward from "./proxy/port_fowarding/TCPForward";
 import PortForwardingManager from "./proxy/port_fowarding/port_forwarding_manger";
-import DatabaseManager from "./utils/databaseManager";
-import UDPFroward from "./proxy/port_fowarding/UDPForward";
-import ReverseProxyBuilder from "./proxy/reverse_proxy/reverse_proxy_builder";
 import RESTApi from "./api/api_server";
-import DNSServer, { DNS_RECORD } from "./dns/DNSServer";
+import DNSServer from "./dns/DNSServer";
 import hello from "./api/routes/hello";
 import login from "./api/routes/login";
 import RouteGroup from "./api/RouteGroup";
 import dns from "./api/routes/v1/dns";
-import port_fowarding from "./api/routes/v1/port_fowarding";
+import port_forwarding from "./api/routes/v1/port_forwarding";
 import logs from "./api/routes/v1/logs";
-import Route from "./api/Route";
 import reverse_proxy from "./api/routes/v1/reverse_proxy";
 
 
@@ -29,57 +22,11 @@ import reverse_proxy from "./api/routes/v1/reverse_proxy";
  * @return {Promise<void>} A promise that resolves when the setup and start
  * process of port forwarding and reverse proxy configurations is complete.
  */
-async function production_main() {
-    logger.verbose("[MASTER] -----------> Getting Port Forwarding")
-    const port_forwarding = await DatabaseManager.getPortForwarding()
-    logger.verbose(`[Port Forwarding] setting up ${port_forwarding.length}`)
-    port_forwarding.forEach(port_forwarding => {
-        // console.dir(port_forwarding)
-        switch(port_forwarding.protocol) {
-            case "tcp":
-                const tcp_forward = new TCPForward(
-                        port_forwarding.incoming_port, 
-                        port_forwarding.internal_port, 
-                        port_forwarding.internal_host, 
-                        `TCPForward ${port_forwarding.id}`
-                    )
-                    .setup()
-                PortForwardingManager.getInstance().addPortForwarding(tcp_forward)
-                break;
-            case "udp":
-                const udp_forward = new UDPFroward(
-                    port_forwarding.incoming_port, 
-                    port_forwarding.internal_port, 
-                    port_forwarding.internal_host,
-                    `UDPForward ${port_forwarding.id}`
-                )
-                    .setup()
-                PortForwardingManager.getInstance().addPortForwarding(udp_forward)
-                break;
-        }
-    })
-
-    logger.verbose("[MASTER] -----------> Getting Reserve Hosts")
-    const reverse_host = await DatabaseManager.getReserveHosts()
-    logger.verbose(`[Reserve Hosts] setting up ${reverse_host.length}`)
-    reverse_host.forEach(reverse_host => {
-        ReverseProxyManager.getInstance().addReverseProxyFromData(reverse_host)
-    })
-
-    PortForwardingManager.getInstance().start()
-    ReverseProxyManager.getInstance().start()
+async function production_main(): Promise<void> {
+    await PortForwardingManager.getInstance().start()
+    await ReverseProxyManager.getInstance().start()
 }
 
-async function development_main() {
-    // ------------------------------
-
-    const yamlReader = new YAMLReader("./config.yaml")
-    const config = await yamlReader.readConfig()
-    const proxyFactory = new ProxyFactory(config)
-    proxyFactory.build()
-
-    ReverseProxyManager.getInstance().start()
-}
 
 function server_main() {
     const server = new RESTApi()
@@ -87,7 +34,7 @@ function server_main() {
     server.addRoute(
         new RouteGroup("/api")
             .route(new RouteGroup("/v1")
-                .route(dns, port_fowarding, reverse_proxy)
+                .route(dns, port_forwarding, reverse_proxy)
             )
             .route(login)
     )
@@ -106,18 +53,7 @@ function server_main() {
  * @return {Promise<void>} A promise that resolves when the DNS server has been set up and started.
  */
 async function dns_main(): Promise<void> {
-    const server = new DNSServer(5333)
-    logger.verbose("[MASTER] Setting up domains")
-    const domains = await DatabaseManager.getDomainDns()
-    for (const domain of domains) {
-        const records = await DatabaseManager.getDomainDnsRecord(domain.id)
-        records.forEach((record) => {
-            server.addRecord(record as DNS_RECORD)
-        });
-    }
-
-    server.setup()
-    server.start()
+    return DNSServer.getInstance().fetchAndStart()
 }
 
 async function main(): Promise<void> {

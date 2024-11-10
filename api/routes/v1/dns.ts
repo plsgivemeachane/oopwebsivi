@@ -5,6 +5,8 @@ import RouteGroup from "../../RouteGroup";
 import { Request, Response } from "express";
 import { RequestType } from "../../RequestType";
 import ValidatableJSON from "../../ValidateData";
+import DNSServer from "../../../dns/DNSServer";
+import Utils from "../../../utils/Utils";
 
 interface RecordData {
     domainId: string
@@ -126,16 +128,25 @@ export default new RouteGroup("/dns")
                 if (record.name == "@")
                     record.name = existingDomain.domain;
 
-                const domain = (record.name == existingDomain.domain) ? existingDomain.domain : `${record.name}.${existingDomain.domain}`;
+                const domain_name = (record.name == existingDomain.domain) ? existingDomain.domain : `${record.name}.${existingDomain.domain}`;
 
-                const existingRecord = await DatabaseManager.getDomainDnsRecordByName(existingDomain.id, domain, record.type);
+                const existingRecord = await DatabaseManager.getDomainDnsRecordByName(existingDomain.id, domain_name, record.type);
                 if (existingRecord)
                     return new ReturnBuilder()
                         .status(400)
                         .msg("Record already exists")
                         .send(res);
 
-                await DatabaseManager.createDomainDnsRecord(existingDomain, record);
+                // Just a trick lord
+                const { domain, ...DNSRecord } = record;
+
+                DNSServer.getInstance().addRecord({
+                    ...DNSRecord,
+                    domain_id: existingDomain.id,
+                })
+
+                Utils.defer(async () => await DatabaseManager.createDomainDnsRecord(existingDomain, record), 200);
+
                 return new ReturnBuilder()
                     .status(200)
                     .msg("Record created")
@@ -160,8 +171,12 @@ export default new RouteGroup("/dns")
                         .msg("Record not found")
                         .send(res);
 
-
                 await DatabaseManager.deleteDomainDnsRecord(dns_record.id);
+
+                // Restart the dns server b/c I can't fuktup it rn
+                // TODO Need refactor for better performance
+
+                await DNSServer.getInstance().stop()
 
                 return new ReturnBuilder()
                     .status(200)
