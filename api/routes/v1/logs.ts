@@ -1,7 +1,8 @@
-import Route from "../Route";
-import APIServer from "../api_server";
+import Route from "../../Route";
+import APIServer from "../../api_server";
+import { RequestType } from "../../RequestType";
 
-export default new Route("/logs", "get")
+export default new Route("/logs", RequestType.GET)
     .route((req, res) => {
         res.setHeader('Content-Type', 'text/event-stream');
         res.setHeader('Cache-Control', 'no-cache');

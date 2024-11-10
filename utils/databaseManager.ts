@@ -1,4 +1,4 @@
-import { Portforwading_protocols, PrismaClient } from "@prisma/client";
+import { Hostreserving_protocols, Portforwading_protocols, PrismaClient } from "@prisma/client";
 import Utils from "./Utils";
 
 export default class DatabaseManager {
@@ -50,6 +50,32 @@ export default class DatabaseManager {
         return this.prisma.reserve_hosts.findMany();
     }
 
+    static async findReverseHostByDomainName(domain: string) {
+        return this.prisma.reserve_hosts.findUnique({
+            where: {
+                domain,
+            }
+        });
+    }
+
+    static async createReverseHost(domain: string, target_address: string, protocol: Hostreserving_protocols) {
+        return this.prisma.reserve_hosts.create({
+            data: {
+                id: Utils.snowflakeId(),
+                domain,
+                target_address,
+                protocol
+            }
+        })
+    }
+
+    static async deleteReserveHost(domain: string) {
+        return this.prisma.reserve_hosts.delete({
+            where: {
+                domain
+            }
+        })
+    }
 
     // --- Domains ---
     static async getDomainDns(include_records = false) {

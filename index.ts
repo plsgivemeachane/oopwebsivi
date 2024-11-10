@@ -12,9 +12,10 @@ import DNSServer, { DNS_RECORD } from "./dns/DNSServer";
 import hello from "./api/routes/hello";
 import login from "./api/routes/login";
 import RouteGroup from "./api/RouteGroup";
-import dns from "./api/routes/dns";
-import port_fowarding from "./api/routes/port_fowarding";
-import logs from "./api/routes/logs";
+import dns from "./api/routes/v1/dns";
+import port_fowarding from "./api/routes/v1/port_fowarding";
+import logs from "./api/routes/v1/logs";
+import Route from "./api/Route";
 
 
 
@@ -58,22 +59,10 @@ async function production_main() {
     })
 
     logger.info("[MASTER] -----------> Getting Reserve Hosts")
-    const reserve_hosts = await DatabaseManager.getReserveHosts()
-    logger.info(`[Reserve Hosts] setting up ${reserve_hosts.length}`)
-    reserve_hosts.forEach(reserve_host => {
-        const builder = new ReverseProxyBuilder()
-        builder.hostname(reserve_host.domain)
-        switch (reserve_host.protocol) {
-            case "http":
-                builder.http_port(parseInt(reserve_host.target_address.split(":")[1]))
-                break;
-            case "https":
-                builder.https_port(parseInt(reserve_host.target_address.split(":")[1]))
-                break;
-        }
-        const reverse_proxy = builder.build()
-        reverse_proxy.setup()
-        ReverseProxyManager.getInstance().addReverseProxy(reverse_proxy)
+    const reverse_host = await DatabaseManager.getReserveHosts()
+    logger.info(`[Reserve Hosts] setting up ${reverse_host.length}`)
+    reverse_host.forEach(reverse_host => {
+        ReverseProxyManager.getInstance().addReverseProxyFromData(reverse_host)
     })
 
     PortForwardingManager.getInstance().start()
@@ -94,7 +83,13 @@ async function development_main() {
 function server_main() {
     const server = new RESTApi()
     server.addRoute(hello)
-    server.addRoute(new RouteGroup("/api").route(login, dns, port_fowarding))
+    server.addRoute(
+        new RouteGroup("/api")
+            .route(new RouteGroup("/v1")
+                .route(dns, port_fowarding)
+            )
+            .route(login)
+    )
     server.addRoute(logs)
     server.start()
 }
@@ -125,9 +120,9 @@ async function dns_main(): Promise<void> {
 }
 
 async function main(): Promise<void> {
-    // await development_main()
-    server_main()
-    await dns_main()
+    await production_main() // Reverse proxy and Port forwarding
+    await dns_main() // DNS
+    server_main() // API
 }
 
 main().then(_ => {

@@ -1,11 +1,13 @@
-import Route from "../Route"
-import { JWT } from 'quanvnjwt'
-import dotenv from 'dotenv'
+import Route from "../Route";
+import { JWT } from "quanvnjwt";
+import dotenv from "dotenv";
+import { RequestType } from "../RequestType";
+
 dotenv.config()
 
 const jwtClient = new JWT(process.env.JWT_SECRET??"")
 
-export default new Route("/login", 'post', false)
+export default new Route("/login", RequestType.POST, false)
     .route((req, res) => {
         const { username, password } = req.body
         if(!username || !password) {

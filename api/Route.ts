@@ -10,14 +10,13 @@ Middleware (Also the route handler itself) is an InjectableRequest
 */
 import InjectableRequest, { routeFunction, routeReturnFunction } from "../requests/InjectableRequest";
 import Middlewares from "./Middleware";
-type Method = "get" | "post" | "put" | "delete" | "patch";
-
+import { RequestType } from "./RequestType";
 export default class Route {
     private readonly path: string; // private readonly = const
-    private method: Method;
+    private readonly method: RequestType;
     private readonly handler: InjectableRequest;
 
-    constructor(route: string, method: Method, auth = true) {
+    constructor(route: string, method: RequestType, auth = true) {
         this.path = route;
         this.handler = new InjectableRequest();
         this.method = method;
