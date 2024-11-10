@@ -22,7 +22,7 @@ export default abstract class AbstractProxy {
 
     abstract getProxySivi(config: HttpProxyConfig, res: express.Response): any
     public setup(): void {
-        logger.info(`[${this.name}] Setting up proxy`);
+        logger.verbose(`[${this.name}] Setting up proxy`);
         // console.dir(this.config, {
         //     depth: null,
         //     colors: true

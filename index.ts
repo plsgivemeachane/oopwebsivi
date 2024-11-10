@@ -30,9 +30,9 @@ import reverse_proxy from "./api/routes/v1/reverse_proxy";
  * process of port forwarding and reverse proxy configurations is complete.
  */
 async function production_main() {
-    logger.info("[MASTER] -----------> Getting Port Forwarding")
+    logger.verbose("[MASTER] -----------> Getting Port Forwarding")
     const port_forwarding = await DatabaseManager.getPortForwarding()
-    logger.info(`[Port Forwarding] setting up ${port_forwarding.length}`)
+    logger.verbose(`[Port Forwarding] setting up ${port_forwarding.length}`)
     port_forwarding.forEach(port_forwarding => {
         // console.dir(port_forwarding)
         switch(port_forwarding.protocol) {
@@ -59,9 +59,9 @@ async function production_main() {
         }
     })
 
-    logger.info("[MASTER] -----------> Getting Reserve Hosts")
+    logger.verbose("[MASTER] -----------> Getting Reserve Hosts")
     const reverse_host = await DatabaseManager.getReserveHosts()
-    logger.info(`[Reserve Hosts] setting up ${reverse_host.length}`)
+    logger.verbose(`[Reserve Hosts] setting up ${reverse_host.length}`)
     reverse_host.forEach(reverse_host => {
         ReverseProxyManager.getInstance().addReverseProxyFromData(reverse_host)
     })
@@ -107,7 +107,7 @@ function server_main() {
  */
 async function dns_main(): Promise<void> {
     const server = new DNSServer(5333)
-    logger.info("[MASTER] Setting up domains")
+    logger.verbose("[MASTER] Setting up domains")
     const domains = await DatabaseManager.getDomainDns()
     for (const domain of domains) {
         const records = await DatabaseManager.getDomainDnsRecord(domain.id)
@@ -127,5 +127,5 @@ async function main(): Promise<void> {
 }
 
 main().then(_ => {
-    logger.info("[MASTER] Server run successfully")
+    logger.verbose("[MASTER] Server started successfully")
 });

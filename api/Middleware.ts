@@ -8,11 +8,11 @@ dotenv.config()
 export default class Middlewares {
 
     public static authUserUsingJWT(req: express.Request, res: express.Response) {
-        logger.info("[MW] authencating...")
+        logger.verbose("[MW] authencating...")
         // check jwt
         const token = req.headers.authorization
         if (!token) {
-            logger.warn("[MW] No token provided")
+            logger.verbose("[MW] No token provided")
             res.status(401).send('[MW] Unauthorized')
             return false
         }
@@ -20,7 +20,7 @@ export default class Middlewares {
         const token_data = token.split(' ')
 
         if (token_data.length !== 2) {
-            logger.warn("[MW] Invalid token")
+            logger.verbose("[MW] Invalid token")
             res.status(401).send('[MW] Unauthorized')
             return false
         }
@@ -29,12 +29,12 @@ export default class Middlewares {
         const stats = jwt.verify(token_data[1])
 
         if(!stats.status) {
-            logger.warn("[MW] Invalid token")
+            logger.verbose("[MW] Invalid token")
             res.status(401).send('[MW] Unauthorized')
             return false
         }
 
-        logger.info("[MW] Authenticated")
+        logger.verbose("[MW] Authenticated")
         // res.status(200).send('Authorized')
         return true
     }

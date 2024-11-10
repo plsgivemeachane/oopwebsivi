@@ -114,7 +114,7 @@ export default class DNSResolver {
 
     public async process(record: DNS_RECORD, question: DNS_QUESTION) {
         const type = recordTypeMap[question.type];
-        logger.info(`[DNS] Processing record: type:${type} record:${record.type}`)
+        logger.verbose(`[DNS] Processing record: type:${type} record:${record.type}`)
         if (type && type == record.type) {
             this.addAnswer(new DNSAnswerBuilder()
                 .name(question.name)
@@ -132,7 +132,7 @@ export default class DNSResolver {
             // attempt to resolve the CNAME to an IP address and add it to
             // the response.
             try {
-                this.resolveRecord(record);
+                await this.resolveRecord(record);
                 this.addAnswer(new DNSAnswerBuilder()
                     .name(question.name)
                     .type(question.type)

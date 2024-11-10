@@ -51,7 +51,7 @@ export default class ReverseProxyManager {
 
         // Add reverse proxy to map
         this.proxy_map.set(reverse_proxy.getConfig().hostname??"localhost", reverse_proxy);
-        logger.info(`[Reverse Proxy Manager] Reverse proxy added: ${reverse_proxy.getConfig().hostname}`);
+        logger.verbose(`[Reverse Proxy Manager] Reverse proxy added: ${reverse_proxy.getConfig().hostname}`);
     }
 
     public stop() {

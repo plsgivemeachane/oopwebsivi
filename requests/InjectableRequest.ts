@@ -49,7 +49,7 @@ export default class InjectableRequest {
      */
     public getHandler() {
         return async (req: express.Request, res: express.Response) => {
-            logger.info(`[REQUEST] [${req.method}] ${req.url} --- ${req.ip}`)
+            logger.verbose(`[REQUEST] [${req.method}] ${req.url} --- ${req.ip}`)
             try {
                 for(let route of this.routes) {
                     // logger.info("Executing route --- " + route.name)

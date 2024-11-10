@@ -66,7 +66,7 @@ export default class ReverseProxy {
     }
 
     public setupFirewallRules(firewall: FirewallRule) {
-        logger.info(`[${this.name}] Setting up ${firewall.name}`)
+        logger.verbose(`[${this.name}] Setting up ${firewall.name}`)
         this.http_server.setupFirewallRules(firewall)
         this.https_server.setupFirewallRules(firewall)
         return this

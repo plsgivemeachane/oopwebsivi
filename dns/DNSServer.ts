@@ -47,7 +47,7 @@ export default class DNSServer {
             const { questions } = request;
             const question = questions[0];
 
-            logger.info(`Received DNS request: ${JSON.stringify(request)}`);
+            logger.verbose(`Received DNS request: ${JSON.stringify(request)}`);
 
             // If the question is not a DNS query, forward the request to the
             // "unconfigured domain" route on the API server (localhost:3000)

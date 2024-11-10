@@ -38,7 +38,6 @@ const options = {
 }
 
 export const logger = winston.createLogger({
-    level: "verbose",
     transports: [
         new winston.transports.Console(options.console),
         new winston.transports.File(options.file),

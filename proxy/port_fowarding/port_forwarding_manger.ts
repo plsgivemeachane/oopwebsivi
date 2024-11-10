@@ -16,7 +16,7 @@ export default class PortForwardingManager {
     }
 
     public addPortForwarding(portForwarding: AbstractPortForward) {
-        logger.info(`[Port Forwarding Manager] ${portForwarding.getName()} : ${portForwarding.getIncomingPort()} --> ${portForwarding.getInternalHost()}:${portForwarding.getInternalPort()}`)
+        logger.verbose(`[Port Forwarding Manager] ${portForwarding.getName()} : ${portForwarding.getIncomingPort()} --> ${portForwarding.getInternalHost()}:${portForwarding.getInternalPort()}`)
         this.portForwarding.push(portForwarding)
     }
 
