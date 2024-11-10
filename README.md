@@ -7,7 +7,6 @@ Sivi is a project that mimics an Nginx server, providing functionalities to hand
 - [Setup Instructions](#setup-instructions)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [Environment Variables](#environment-variables)
 - [Contributing](#contributing)
 
 ## Setup Instructions
@@ -67,7 +66,6 @@ npm start
 - **URL:** `/api/v1/logs`
 - **Method:** `GET`
 - **Description:** Retrieves real-time logs.
-```
 
 ## Contributing
 
