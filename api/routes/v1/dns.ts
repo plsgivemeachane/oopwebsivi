@@ -177,6 +177,7 @@ export default new RouteGroup("/dns")
                 // TODO Need refactor for better performance
 
                 await DNSServer.getInstance().stop()
+                await DNSServer.getInstance().fetchAndStart()
 
                 return new ReturnBuilder()
                     .status(200)
