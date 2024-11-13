@@ -1,8 +1,7 @@
 node_modules/
 config.yaml
 .env
-/utils/ìnfo.log
 *.http
-*.log
 dist/
 ui/
+utils/info.log

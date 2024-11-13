@@ -21,6 +21,7 @@ export default abstract class AbstractProxy {
     constructor() {}
 
     abstract getProxySivi(config: HttpProxyConfig, res: express.Response): any
+
     public setup(): void {
         logger.verbose(`[${this.name}] Setting up proxy`);
         this.requestHandler.addRoute((req, res) => {
@@ -33,6 +34,8 @@ export default abstract class AbstractProxy {
 
             const proxySivi = this.getProxySivi(extended_config, res)
 
+
+            
             req.pipe(proxySivi, { 
                 end: true // Auto close stream connection
             });

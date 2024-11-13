@@ -15,7 +15,7 @@ export default class ProxyFactory {
         for (const key of keys) {
             logger.verbose("-----> " + key)
             const proxy = this.createProxy(key)
-            ReverseProxyManager.getInstance().addReverseProxy(proxy)
+            ReverseProxyManager.getInstance().addReverseProxy(proxy, "hmm")
         }
     
     }

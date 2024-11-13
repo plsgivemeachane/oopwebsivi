@@ -4,6 +4,7 @@ import express from 'express'
 import http from 'http'
 import ReverseProxyBuilder from "./reverse_proxy_builder";
 import DatabaseManager from "../../utils/databaseManager";
+import URLUtils from "../../utils/URLUtils";
 
 /**
  * The ReverseProxyManager is responsible for managing reverse proxies.
@@ -40,6 +41,7 @@ export default class ReverseProxyManager {
         const reverse_host = await DatabaseManager.getReserveHosts()
         logger.verbose(`[Reverse Proxy Manager] setting up ${reverse_host.length}`)
         reverse_host.forEach(reverse_host => {
+            // console.log(reverse_host)
             this.addReverseProxyFromData(reverse_host)
         })
     }
@@ -51,16 +53,16 @@ export default class ReverseProxyManager {
      * 
      * @param reverse_proxy - The reverse proxy to add.
      */
-    public addReverseProxy(reverse_proxy: ReverseProxy) {
+    public addReverseProxy(reverse_proxy: ReverseProxy, alias: string) {
         if(!reverse_proxy.setted_up) {
             logger.error(`Reverse proxy has not been set up to the endpoint! --- ${reverse_proxy.name}`)
         }
-        if (this.proxy_map.has(reverse_proxy.getConfig().hostname??"localhost")) {
+        if (this.proxy_map.has(alias)) {
             throw new Error(`Reverse proxy with hostname ${reverse_proxy.getConfig().hostname} already exists!`);
         }
 
         // Add reverse proxy to map
-        this.proxy_map.set(reverse_proxy.getConfig().hostname??"localhost", reverse_proxy);
+        this.proxy_map.set(alias, reverse_proxy);
         logger.verbose(`[Reverse Proxy Manager] Reverse proxy added: ${reverse_proxy.getConfig().hostname}`);
     }
 
@@ -103,7 +105,8 @@ export default class ReverseProxyManager {
             
             if (this.proxy_map.has(hostname)) {
                 const reverse_proxy = this.proxy_map.get(hostname) as ReverseProxy; // Already check null
-                // logger.info(`[${reverse_proxy.name}] Forwarding request to ${hostname}`)
+                logger.info(`[${reverse_proxy.name}] Request handled for ${hostname}`)
+                console.log(reverse_proxy.getConfig())
                 reverse_proxy.getHttpHandler()(req, res);
             } else {
                 res.writeHead(404);
@@ -145,18 +148,19 @@ export default class ReverseProxyManager {
 
     public addReverseProxyFromData(reverse_host: any) {
         const builder = new ReverseProxyBuilder()
-        builder.hostname(reverse_host.domain)
+        const data = URLUtils.extractURL(reverse_host.target_address)
+        builder.hostname(data.hostname)
         switch (reverse_host.protocol) {
             case "http":
-                builder.http_port(parseInt(reverse_host.target_address.split(":")[1]))
+                builder.http_port(data.port)
                 break;
             case "https":
-                builder.https_port(parseInt(reverse_host.target_address.split(":")[1]))
+                builder.https_port(data.port)
                 break;
         }
 
         const reverse_proxy = builder.build().setup()
-        this.addReverseProxy(reverse_proxy)
+        this.addReverseProxy(reverse_proxy, reverse_host.domain)
     }
 
     public removeReverseProxyByName(reverse_host: string) {
