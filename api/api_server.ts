@@ -34,7 +34,6 @@ export default class APIServer {
         const server = http.createServer(app);
         // Middleware
         app.use(express.json());
-        // app.use(MiddlewareController.lol)
 
         const root = new RouteGroup("/")
         for(let route of this.routes) {

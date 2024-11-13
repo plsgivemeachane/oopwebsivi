@@ -64,7 +64,7 @@ export default new RouteGroup("/reverseproxy")
         new Route("/hosts/:domain", RequestType.DELETE)
             .route(async (req, res) => {
                 const domain = req.params.domain;
-                const data = await DatabaseManager.findReverseHostByDomainName(domain)
+                const data = await DatabaseManager.findReverseHostByDomainId(domain)
                 if (!data) return new ReturnBuilder()
                     .status(404)
                     .msg("Host not found")

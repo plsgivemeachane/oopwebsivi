@@ -20,3 +20,751 @@
 <2024-11-10 14:14:16> [info]: [DNS Server] Adding Record sunsmm.vn
 <2024-11-10 14:14:16> [info]: [DNS Server] DNS server listening on port 5333
 <2024-11-10 14:14:16> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:31:12> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:31:12> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:31:12> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:31:12> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:31:12> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:31:12> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:31:12> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:31:12> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:31:12> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:31:12> [info]: [DNS Server] DNS server listening on port 5333
+<2024-11-10 22:31:12> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:31:15> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:16> [info]: APP TEST
+<2024-11-10 22:31:21> [info]: APP TEST
+<2024-11-10 22:31:21> [info]: APP TEST
+<2024-11-10 22:31:21> [info]: APP TEST
+<2024-11-10 22:31:22> [info]: APP TEST
+<2024-11-10 22:31:22> [info]: APP TEST
+<2024-11-10 22:31:22> [info]: APP TEST
+<2024-11-10 22:31:22> [info]: APP TEST
+<2024-11-10 22:31:23> [info]: APP TEST
+<2024-11-10 22:31:31> [info]: APP TEST
+<2024-11-10 22:31:33> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:48> [info]: APP TEST
+<2024-11-10 22:31:50> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:51> [info]: APP TEST
+<2024-11-10 22:31:53> [info]: APP TEST
+<2024-11-10 22:31:53> [info]: APP TEST
+<2024-11-10 22:31:53> [info]: APP TEST
+<2024-11-10 22:31:53> [info]: APP TEST
+<2024-11-10 22:31:53> [info]: APP TEST
+<2024-11-10 22:31:53> [info]: APP TEST
+<2024-11-10 22:31:53> [info]: APP TEST
+<2024-11-10 22:31:53> [info]: APP TEST
+<2024-11-10 22:31:55> [info]: APP TEST
+<2024-11-10 22:31:57> [info]: APP TEST
+<2024-11-10 22:31:57> [info]: APP TEST
+<2024-11-10 22:31:57> [info]: APP TEST
+<2024-11-10 22:31:57> [info]: APP TEST
+<2024-11-10 22:31:58> [info]: APP TEST
+<2024-11-10 22:31:58> [info]: APP TEST
+<2024-11-10 22:31:58> [info]: APP TEST
+<2024-11-10 22:31:58> [info]: APP TEST
+<2024-11-10 22:31:58> [info]: APP TEST
+<2024-11-10 22:32:03> [info]: APP TEST
+<2024-11-10 22:33:00> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:33:00> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:33:00> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:33:00> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:33:00> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:33:00> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:33:00> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:33:00> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:33:00> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:33:00> [info]: [DNS Server] DNS server listening on port 5333
+<2024-11-10 22:33:00> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:33:03> [info]: APP TEST
+<2024-11-10 22:33:09> [info]: APP TEST
+<2024-11-10 22:33:09> [info]: APP TEST
+<2024-11-10 22:33:09> [info]: APP TEST
+<2024-11-10 22:33:09> [info]: APP TEST
+<2024-11-10 22:33:11> [info]: APP TEST
+<2024-11-10 22:33:28> [info]: APP TEST
+<2024-11-10 22:33:33> [info]: APP TEST
+<2024-11-10 22:33:33> [info]: APP TEST
+<2024-11-10 22:33:33> [info]: APP TEST
+<2024-11-10 22:33:33> [info]: APP TEST
+<2024-11-10 22:35:25> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:35:25> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:35:25> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:35:25> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:35:25> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:35:25> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:35:25> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:35:25> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:35:25> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:35:25> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:35:25> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:35:42> [info]: APP TEST
+<2024-11-10 22:35:48> [info]: APP TEST
+<2024-11-10 22:35:48> [info]: APP TEST
+<2024-11-10 22:35:48> [info]: APP TEST
+<2024-11-10 22:37:25> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:37:25> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:37:25> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:37:25> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:37:25> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:37:25> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:37:25> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:37:25> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:37:25> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:37:25> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:37:25> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:37:26> [info]: APP TEST
+<2024-11-10 22:37:34> [info]: APP TEST
+<2024-11-10 22:37:34> [info]: APP TEST
+<2024-11-10 22:37:34> [info]: APP TEST
+<2024-11-10 22:46:53> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:46:53> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:46:53> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:46:53> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:46:53> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:46:53> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:46:53> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:46:53> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:46:53> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:46:53> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:46:53> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:46:56> [info]: APP TEST
+<2024-11-10 22:47:02> [info]: APP TEST
+<2024-11-10 22:47:02> [info]: APP TEST
+<2024-11-10 22:47:02> [info]: APP TEST
+<2024-11-10 22:47:02> [info]: APP TEST
+<2024-11-10 22:47:02> [info]: APP TEST
+<2024-11-10 22:47:02> [info]: APP TEST
+<2024-11-10 22:47:05> [info]: APP TEST
+<2024-11-10 22:47:06> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:11> [info]: APP TEST
+<2024-11-10 22:47:20> [info]: APP TEST
+<2024-11-10 22:47:20> [info]: APP TEST
+<2024-11-10 22:47:20> [info]: APP TEST
+<2024-11-10 22:47:21> [info]: APP TEST
+<2024-11-10 22:47:21> [info]: APP TEST
+<2024-11-10 22:47:21> [info]: APP TEST
+<2024-11-10 22:47:22> [info]: APP TEST
+<2024-11-10 22:47:23> [info]: APP TEST
+<2024-11-10 22:47:23> [info]: APP TEST
+<2024-11-10 22:47:58> [info]: APP TEST
+<2024-11-10 22:48:05> [info]: APP TEST
+<2024-11-10 22:48:05> [info]: APP TEST
+<2024-11-10 22:48:05> [info]: APP TEST
+<2024-11-10 22:48:05> [info]: APP TEST
+<2024-11-10 22:48:09> [info]: APP TEST
+<2024-11-10 22:49:41> [info]: APP TEST
+<2024-11-10 22:49:43> [info]: APP TEST
+<2024-11-10 22:49:48> [info]: APP TEST
+<2024-11-10 22:49:48> [info]: APP TEST
+<2024-11-10 22:49:48> [info]: APP TEST
+<2024-11-10 22:49:48> [info]: APP TEST
+<2024-11-10 22:51:07> [info]: APP TEST
+<2024-11-10 22:51:12> [info]: APP TEST
+<2024-11-10 22:51:12> [info]: APP TEST
+<2024-11-10 22:51:12> [info]: APP TEST
+<2024-11-10 22:52:08> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:52:08> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:52:08> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:52:08> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:52:08> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:52:08> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:52:08> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:52:08> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:52:08> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:52:08> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:52:08> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:52:11> [info]: APP TEST
+<2024-11-10 22:52:11> [info]: APP TEST
+<2024-11-10 22:52:11> [info]: APP TEST
+<2024-11-10 22:52:16> [info]: APP TEST
+<2024-11-10 22:52:16> [info]: APP TEST
+<2024-11-10 22:52:16> [info]: APP TEST
+<2024-11-10 22:52:16> [info]: APP TEST
+<2024-11-10 22:52:16> [info]: APP TEST
+<2024-11-10 22:52:22> [info]: APP TEST
+<2024-11-10 22:52:23> [info]: APP TEST
+<2024-11-10 22:52:23> [info]: APP TEST
+<2024-11-10 22:52:27> [info]: APP TEST
+<2024-11-10 22:52:27> [info]: APP TEST
+<2024-11-10 22:52:27> [info]: APP TEST
+<2024-11-10 22:52:27> [info]: APP TEST
+<2024-11-10 22:52:27> [info]: APP TEST
+<2024-11-10 22:52:27> [info]: APP TEST
+<2024-11-10 22:52:29> [info]: APP TEST
+<2024-11-10 22:52:48> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:52:48> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:52:48> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:52:48> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:52:48> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:52:48> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:52:48> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:52:48> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:52:48> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:52:48> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:52:48> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:53:34> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:53:34> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:53:34> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:53:34> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:53:34> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:53:34> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:53:34> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:53:34> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:53:34> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:53:34> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:53:34> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:54:03> [info]: [7174707826560974848-TCP] Foward connection: ::ffff:103.67.198.35:1001 through 54933 ---> 10.10.10.7:22
+<2024-11-10 22:54:03> [error]: [7174707826560974848-TCP] Server socket error: read ECONNRESET
+<2024-11-10 22:54:38> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:54:38> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:54:38> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:54:38> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:54:38> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:54:38> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:54:38> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:54:38> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:54:38> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:54:38> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:54:38> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:54:46> [info]: APP TEST
+<2024-11-10 22:55:31> [info]: APP TEST
+<2024-11-10 22:55:31> [info]: APP TEST
+<2024-11-10 22:55:31> [info]: APP TEST
+<2024-11-10 22:55:31> [info]: APP TEST
+<2024-11-10 22:55:32> [info]: APP TEST
+<2024-11-10 22:55:34> [info]: APP TEST
+<2024-11-10 22:55:35> [info]: APP TEST
+<2024-11-10 22:55:46> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:55:46> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:55:46> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:55:46> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:55:46> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:55:46> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:55:46> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:55:46> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:55:46> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:55:46> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:55:46> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:50> [info]: APP TEST
+<2024-11-10 22:55:54> [info]: APP TEST
+<2024-11-10 22:55:54> [info]: APP TEST
+<2024-11-10 22:55:54> [info]: APP TEST
+<2024-11-10 22:55:54> [info]: APP TEST
+<2024-11-10 22:55:55> [info]: APP TEST
+<2024-11-10 22:55:55> [info]: APP TEST
+<2024-11-10 22:55:55> [info]: APP TEST
+<2024-11-10 22:55:56> [info]: APP TEST
+<2024-11-10 22:55:57> [info]: APP TEST
+<2024-11-10 22:55:58> [info]: APP TEST
+<2024-11-10 22:59:09> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 22:59:09> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 22:59:09> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 22:59:09> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 22:59:09> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 22:59:09> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 22:59:09> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 22:59:09> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 22:59:09> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 22:59:09> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 22:59:09> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 22:59:13> [info]: APP TEST
+<2024-11-10 22:59:18> [info]: APP TEST
+<2024-11-10 22:59:18> [info]: APP TEST
+<2024-11-10 22:59:18> [info]: APP TEST
+<2024-11-10 22:59:18> [info]: APP TEST
+<2024-11-10 22:59:22> [info]: APP TEST
+<2024-11-10 22:59:23> [info]: APP TEST
+<2024-11-10 22:59:24> [info]: APP TEST
+<2024-11-10 22:59:25> [info]: APP TEST
+<2024-11-10 22:59:28> [info]: APP TEST
+<2024-11-10 22:59:40> [info]: APP TEST
+<2024-11-10 22:59:40> [info]: APP TEST
+<2024-11-10 23:00:26> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 23:00:26> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 23:00:26> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 23:00:26> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 23:00:26> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 23:00:26> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 23:00:26> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 23:00:26> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 23:00:26> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 23:00:26> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 23:00:26> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 23:00:33> [info]: APP TEST
+<2024-11-10 23:00:37> [info]: APP TEST
+<2024-11-10 23:00:37> [info]: APP TEST
+<2024-11-10 23:00:37> [info]: APP TEST
+<2024-11-10 23:00:37> [info]: APP TEST
+<2024-11-10 23:02:12> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 23:02:12> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 23:02:12> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 23:02:12> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 23:02:12> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 23:02:12> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 23:02:12> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 23:02:12> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 23:02:12> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 23:02:12> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 23:02:12> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 23:02:37> [info]: APP TEST
+<2024-11-10 23:02:38> [info]: APP TEST
+<2024-11-10 23:02:38> [info]: APP TEST
+<2024-11-10 23:02:53> [info]: APP TEST
+<2024-11-10 23:02:53> [info]: APP TEST
+<2024-11-10 23:02:53> [info]: APP TEST
+<2024-11-10 23:02:53> [info]: APP TEST
+<2024-11-10 23:02:53> [info]: APP TEST
+<2024-11-10 23:02:53> [info]: APP TEST
+<2024-11-10 23:02:54> [info]: APP TEST
+<2024-11-10 23:02:59> [info]: APP TEST
+<2024-11-10 23:03:00> [info]: APP TEST
+<2024-11-10 23:03:00> [info]: APP TEST
+<2024-11-10 23:03:00> [info]: APP TEST
+<2024-11-10 23:03:01> [info]: APP TEST
+<2024-11-10 23:03:19> [info]: APP TEST
+<2024-11-10 23:03:19> [info]: APP TEST
+<2024-11-10 23:03:20> [info]: APP TEST
+<2024-11-10 23:03:20> [info]: APP TEST
+<2024-11-10 23:03:24> [info]: APP TEST
+<2024-11-10 23:03:28> [info]: APP TEST
+<2024-11-10 23:03:29> [info]: APP TEST
+<2024-11-10 23:03:59> [info]: APP TEST
+<2024-11-10 23:04:19> [info]: APP TEST
+<2024-11-10 23:04:19> [info]: APP TEST
+<2024-11-10 23:04:19> [info]: APP TEST
+<2024-11-10 23:04:19> [info]: APP TEST
+<2024-11-10 23:04:19> [info]: APP TEST
+<2024-11-10 23:04:19> [info]: APP TEST
+<2024-11-10 23:04:19> [info]: APP TEST
+<2024-11-10 23:04:21> [info]: APP TEST
+<2024-11-10 23:04:32> [info]: APP TEST
+<2024-11-10 23:05:23> [info]: APP TEST
+<2024-11-10 23:05:23> [info]: APP TEST
+<2024-11-10 23:05:23> [info]: APP TEST
+<2024-11-10 23:05:23> [info]: APP TEST
+<2024-11-10 23:05:23> [info]: APP TEST
+<2024-11-10 23:05:23> [info]: APP TEST
+<2024-11-10 23:05:23> [info]: APP TEST
+<2024-11-10 23:05:24> [info]: APP TEST
+<2024-11-10 23:06:22> [info]: APP TEST
+<2024-11-10 23:06:22> [info]: APP TEST
+<2024-11-10 23:06:22> [info]: APP TEST
+<2024-11-10 23:06:22> [info]: APP TEST
+<2024-11-10 23:06:22> [info]: APP TEST
+<2024-11-10 23:06:23> [info]: APP TEST
+<2024-11-10 23:06:23> [info]: APP TEST
+<2024-11-10 23:06:23> [info]: APP TEST
+<2024-11-10 23:06:30> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 23:06:30> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 23:06:30> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 23:06:30> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 23:06:30> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 23:06:30> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 23:06:30> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 23:06:30> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 23:06:30> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 23:06:30> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 23:06:30> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 23:06:33> [info]: APP TEST
+<2024-11-10 23:06:35> [info]: APP TEST
+<2024-11-10 23:06:35> [info]: APP TEST
+<2024-11-10 23:06:35> [info]: APP TEST
+<2024-11-10 23:06:35> [info]: APP TEST
+<2024-11-10 23:06:35> [info]: APP TEST
+<2024-11-10 23:06:35> [info]: APP TEST
+<2024-11-10 23:06:35> [info]: APP TEST
+<2024-11-10 23:06:36> [info]: APP TEST
+<2024-11-10 23:06:41> [info]: APP TEST
+<2024-11-10 23:06:44> [info]: [Reverse Proxy Manager] Removing reverse proxy: 7174279395571084288
+<2024-11-10 23:06:44> [info]: APP TEST
+<2024-11-10 23:06:44> [info]: APP TEST
+<2024-11-10 23:06:44> [info]: APP TEST
+<2024-11-10 23:06:44> [info]: APP TEST
+<2024-11-10 23:06:44> [info]: APP TEST
+<2024-11-10 23:06:44> [info]: APP TEST
+<2024-11-10 23:06:44> [info]: APP TEST
+<2024-11-10 23:06:45> [info]: APP TEST
+<2024-11-10 23:07:57> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 23:07:57> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 23:07:57> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 23:07:57> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 23:07:57> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 23:07:57> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 23:07:57> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 23:07:57> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 23:07:57> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 23:07:57> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 23:07:57> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 23:07:57> [info]: APP TEST
+<2024-11-10 23:07:58> [info]: APP TEST
+<2024-11-10 23:07:58> [info]: APP TEST
+<2024-11-10 23:07:58> [info]: APP TEST
+<2024-11-10 23:07:58> [info]: APP TEST
+<2024-11-10 23:07:58> [info]: APP TEST
+<2024-11-10 23:07:58> [info]: APP TEST
+<2024-11-10 23:07:58> [info]: APP TEST
+<2024-11-10 23:08:04> [info]: APP TEST
+<2024-11-10 23:08:04> [info]: APP TEST
+<2024-11-10 23:08:15> [info]: APP TEST
+<2024-11-10 23:08:15> [info]: APP TEST
+<2024-11-10 23:08:15> [info]: APP TEST
+<2024-11-10 23:08:15> [info]: APP TEST
+<2024-11-10 23:08:15> [info]: APP TEST
+<2024-11-10 23:08:15> [info]: APP TEST
+<2024-11-10 23:08:15> [info]: APP TEST
+<2024-11-10 23:08:15> [info]: APP TEST
+<2024-11-10 23:08:28> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 23:08:28> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 23:08:28> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 23:08:28> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 23:08:28> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 23:08:28> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 23:08:28> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 23:08:28> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 23:08:28> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 23:08:28> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 23:08:28> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 23:08:30> [info]: APP TEST
+<2024-11-10 23:08:37> [info]: APP TEST
+<2024-11-10 23:08:37> [info]: APP TEST
+<2024-11-10 23:08:37> [info]: APP TEST
+<2024-11-10 23:08:37> [info]: APP TEST
+<2024-11-10 23:08:37> [info]: APP TEST
+<2024-11-10 23:08:37> [info]: APP TEST
+<2024-11-10 23:08:37> [info]: APP TEST
+<2024-11-10 23:08:37> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:38> [info]: APP TEST
+<2024-11-10 23:08:40> [info]: APP TEST
+<2024-11-10 23:08:40> [info]: APP TEST
+<2024-11-10 23:08:40> [info]: APP TEST
+<2024-11-10 23:08:40> [info]: APP TEST
+<2024-11-10 23:08:40> [info]: APP TEST
+<2024-11-10 23:08:40> [info]: APP TEST
+<2024-11-10 23:08:40> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:41> [info]: APP TEST
+<2024-11-10 23:08:52> [info]: APP TEST
+<2024-11-10 23:08:52> [info]: APP TEST
+<2024-11-10 23:08:52> [info]: APP TEST
+<2024-11-10 23:08:52> [info]: APP TEST
+<2024-11-10 23:08:52> [info]: APP TEST
+<2024-11-10 23:08:52> [info]: APP TEST
+<2024-11-10 23:08:52> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:08:53> [info]: APP TEST
+<2024-11-10 23:09:04> [info]: APP TEST
+<2024-11-10 23:09:04> [info]: APP TEST
+<2024-11-10 23:09:04> [info]: APP TEST
+<2024-11-10 23:09:04> [info]: APP TEST
+<2024-11-10 23:09:04> [info]: APP TEST
+<2024-11-10 23:09:04> [info]: APP TEST
+<2024-11-10 23:09:04> [info]: APP TEST
+<2024-11-10 23:09:05> [info]: APP TEST
+<2024-11-10 23:09:05> [info]: APP TEST
+<2024-11-10 23:09:07> [info]: [Reverse Proxy Manager] Removing reverse proxy: 7174279395571084288
+<2024-11-10 23:09:07> [info]: APP TEST
+<2024-11-10 23:09:07> [info]: APP TEST
+<2024-11-10 23:09:07> [info]: APP TEST
+<2024-11-10 23:09:07> [info]: APP TEST
+<2024-11-10 23:09:07> [info]: APP TEST
+<2024-11-10 23:09:07> [info]: APP TEST
+<2024-11-10 23:09:07> [info]: APP TEST
+<2024-11-10 23:09:08> [info]: APP TEST
+<2024-11-10 23:09:08> [info]: APP TEST
+<2024-11-10 23:09:59> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-10 23:09:59> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-10 23:09:59> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-10 23:09:59> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-10 23:09:59> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-10 23:09:59> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-10 23:09:59> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-10 23:09:59> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-10 23:09:59> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-10 23:09:59> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-10 23:09:59> [info]: [API Server] API Server listening on port 8080...
+<2024-11-10 23:10:13> [info]: APP TEST
+<2024-11-10 23:10:14> [info]: APP TEST
+<2024-11-10 23:10:14> [info]: APP TEST
+<2024-11-10 23:10:14> [info]: APP TEST
+<2024-11-10 23:10:14> [info]: APP TEST
+<2024-11-10 23:10:14> [info]: APP TEST
+<2024-11-10 23:10:14> [info]: APP TEST
+<2024-11-10 23:10:14> [info]: APP TEST
+<2024-11-10 23:10:14> [info]: APP TEST
+<2024-11-10 23:10:22> [info]: [Reverse Proxy Manager] Removing reverse proxy: 7174279395571084288
+<2024-11-10 23:10:22> [info]: APP TEST
+<2024-11-10 23:10:22> [info]: APP TEST
+<2024-11-10 23:10:22> [info]: APP TEST
+<2024-11-10 23:10:22> [info]: APP TEST
+<2024-11-10 23:10:22> [info]: APP TEST
+<2024-11-10 23:10:22> [info]: APP TEST
+<2024-11-10 23:10:22> [info]: APP TEST
+<2024-11-10 23:10:23> [info]: APP TEST
+<2024-11-10 23:10:23> [info]: APP TEST
+<2024-11-11 11:45:28> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-11 11:45:28> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-11 11:45:28> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-11 11:45:28> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-11 11:45:28> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-11 11:45:28> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-11 11:45:28> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-11 11:45:28> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-11 11:45:28> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-11 11:45:28> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-11 11:45:28> [info]: [API Server] API Server listening on port 8080...
+<2024-11-11 11:45:28> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 58083 ---> 10.10.10.13:3389
+<2024-11-11 11:45:30> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:45:35> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:124.107.139.69:3004 through 54590 ---> 10.10.10.13:3389
+<2024-11-11 11:45:36> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:45:39> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 57847 ---> 10.10.10.13:3389
+<2024-11-11 11:45:41> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:45:45> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 60695 ---> 10.10.10.13:3389
+<2024-11-11 11:45:47> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:45:57> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 54689 ---> 10.10.10.13:3389
+<2024-11-11 11:45:59> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:46:03> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 61705 ---> 10.10.10.13:3389
+<2024-11-11 11:46:05> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:46:07> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 50057 ---> 10.10.10.13:3389
+<2024-11-11 11:46:10> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:46:11> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:124.107.139.69:3004 through 58367 ---> 10.10.10.13:3389
+<2024-11-11 11:48:35> [info]: [Port Forwarding Manager] Starting port forwarding...
+<2024-11-11 11:48:35> [info]: [7174285165565340672-TCP] TCP port forwarding listening on port 3004...
+<2024-11-11 11:48:35> [info]: [7174707826560974848-TCP] TCP port forwarding listening on port 1001...
+<2024-11-11 11:48:35> [info]: [7175787670988898304-TCP] TCP port forwarding listening on port 2005...
+<2024-11-11 11:48:35> [info]: [7177051090576691200-TCP] TCP port forwarding listening on port 5432...
+<2024-11-11 11:48:35> [info]: [7177589698826781696-TCP] TCP port forwarding listening on port 8006...
+<2024-11-11 11:48:35> [info]: [7177753402563108864-TCP] TCP port forwarding listening on port 2000...
+<2024-11-11 11:48:35> [info]: [Reverse Server Manager] HTTP reverse proxy listening on port 80...
+<2024-11-11 11:48:35> [info]: [DNS Server] Adding Record sunsmm.vn
+<2024-11-11 11:48:35> [info]: [DNS Server] DNS server listening on port 53
+<2024-11-11 11:48:35> [info]: [API Server] API Server listening on port 8080...
+<2024-11-11 11:48:43> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 64264 ---> 10.10.10.13:3389
+<2024-11-11 11:48:45> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:48:48> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 52903 ---> 10.10.10.13:3389
+<2024-11-11 11:48:49> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:124.107.139.69:3004 through 57586 ---> 10.10.10.13:3389
+<2024-11-11 11:48:50> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:48:51> [error]: [7174285165565340672-TCP] Client socket error: read ECONNRESET
+<2024-11-11 11:48:55> [info]: [7174285165565340672-TCP] Foward connection: ::ffff:34.57.42.66:3004 through 49357 ---> 10.10.10.13:3389

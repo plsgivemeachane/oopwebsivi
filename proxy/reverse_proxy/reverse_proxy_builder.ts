@@ -2,8 +2,8 @@ import ReverseProxy, { ReverseProxyConfig } from "./reverse_proxy";
 
 export default class ReverseProxyBuilder {
     private config: ReverseProxyConfig = {
-        http_port: 80,
-        https_port: 443,
+        http_port: parseInt(String(process.env.HTTP_WEB_SERVER_PORT)) || 80,
+        https_port: parseInt(String(process.env.HTTPS_WEB_SERVER_PORT)) || 443,
         hostname: "localhost",
         path: "/",
     }; // Default setting

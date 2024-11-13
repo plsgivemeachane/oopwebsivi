@@ -10,8 +10,9 @@ import dns from "./api/routes/v1/dns";
 import port_forwarding from "./api/routes/v1/port_forwarding";
 import logs from "./api/routes/v1/logs";
 import reverse_proxy from "./api/routes/v1/reverse_proxy";
-
-
+import app_route from "./api/routes/app_route";
+import dotenv from 'dotenv'
+dotenv.config()
 
 /**
  * Sets up and starts port forwarding and reverse proxy configurations
@@ -31,11 +32,11 @@ async function production_main(): Promise<void> {
 function server_main() {
     const server = new RESTApi()
     server.addRoute(hello)
+    server.addRoute(app_route)
     server.addRoute(
         new RouteGroup("/api")
-            .route(new RouteGroup("/v1")
-                .route(dns, port_forwarding, reverse_proxy)
-            )
+            .route(dns, port_forwarding, reverse_proxy)
+        
             .route(login)
     )
     server.addRoute(logs)
@@ -60,6 +61,19 @@ async function main(): Promise<void> {
     await production_main() // Reverse proxy and Port forwarding
     await dns_main() // DNS
     server_main() // API
+
+    // Code chạy next app
+    const { exec } = require('child_process');
+    const startUiNextJs = `npx next start ui -p ${process.env.WEB_UI_PORT}`;
+    console.log(`Web UI is listening in port ${process.env.WEB_UI_PORT}`)
+    exec(startUiNextJs, (err: any, stdout: any, stderr: any) => {
+        if (err) {
+            console.error(`Error starting Next.js app: ${err}`);
+            return;
+        }
+        console.log(`Next.js app output: ${stdout}`);
+        console.error(`Next.js app error: ${stderr}`);
+    });
 }
 
 main().then(_ => {

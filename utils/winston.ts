@@ -43,6 +43,7 @@ export const logger = winston.createLogger({
         new winston.transports.File(options.file),
         new LogStreaming({
             ...options.file,
+            level: "verbose",
             observable: APIServer.getObservable()
         })
     ],

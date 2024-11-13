@@ -101,15 +101,15 @@ export default new RouteGroup("/portforwarding")
 
             if(existingPort.protocol == "tcp") {
                 const online = await Utils.checkTcpPortOnline(
-                    data.target_host,
-                    data.target_port
+                    existingPort.internal_host,
+                    existingPort.internal_port,
                 )
 
                 data.status = online ? "staged" : "unstaged";
             } else {
                 const online = await Utils.checkUdpPortOnline(
-                    data.target_host,
-                    data.target_port
+                    existingPort.internal_host,
+                    existingPort.internal_port,
                 )
 
                 data.status = online ? "staged" : "unstaged";

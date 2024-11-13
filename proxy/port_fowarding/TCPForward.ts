@@ -20,6 +20,7 @@ export default class TCPForward extends AbstractPortForward {
 
             csocket.on('error', (err) => {
                 logger.error(`[${this.name}] Client socket error: ${err.message}`);
+                ssocket.destroy();
             });
 
             ssocket.on('error', (err) => {
@@ -29,7 +30,7 @@ export default class TCPForward extends AbstractPortForward {
         })
 
         this.server.on("connection", (socket) => {
-            logger.info(`[${this.name}] Foward connection: ${socket.remoteAddress}:${this.incomingPort} through ${socket.remotePort} ---> ${this.internalHost}:${this.internalPort}`);
+            logger.info(`[${this.name}] Forward connection: ${socket.remoteAddress}:${this.incomingPort} ---> ${this.internalHost}:${this.internalPort}`);
         });
 
         this.server.on('error', (err) => {

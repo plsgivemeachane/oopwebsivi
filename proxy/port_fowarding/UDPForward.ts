@@ -12,7 +12,6 @@ export default class UDPForward extends AbstractPortForward {
 
     setup() {
         this.server = dgram.createSocket('udp4');
-
         this.server.on('message', (msg, rinfo) => {
             const socket = dgram.createSocket('udp4');
             socket.send(msg, 0, msg.length, this.internalPort, this.internalHost, err => {

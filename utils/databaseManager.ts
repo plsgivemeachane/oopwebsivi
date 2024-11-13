@@ -53,10 +53,19 @@ export default class DatabaseManager {
     static async findReverseHostByDomainName(domain: string) {
         return this.prisma.reserve_hosts.findUnique({
             where: {
-                domain,
+                domain
             }
         });
     }
+
+    static async findReverseHostByDomainId(id: string) {
+        return this.prisma.reserve_hosts.findUnique({
+            where: {
+                id
+            }
+        });
+    }
+
 
     static async createReverseHost(domain: string, target_address: string, protocol: Hostreserving_protocols) {
         return this.prisma.reserve_hosts.create({
@@ -69,10 +78,10 @@ export default class DatabaseManager {
         })
     }
 
-    static async deleteReserveHost(domain: string) {
+    static async deleteReserveHost(id: string) {
         return this.prisma.reserve_hosts.delete({
             where: {
-                domain
+                id
             }
         })
     }
