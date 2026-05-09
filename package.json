@@ -43,7 +43,7 @@
     "dns2": "^2.1.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "express": "^4.21.1",
+    "express": "^4.22.1",
     "express-session": "^1.18.1",
     "express-useragent": "^1.0.15",
     "framer-motion": "^11.11.9",
